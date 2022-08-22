@@ -1,0 +1,25 @@
+{
+  "name": "cataliwos/plugin.cwapp",
+  "description": "Plugin: UI/UX tools",
+  "keywords": ["plugin", "catali", "web", "operating","system","ui", "theme", "interface"],
+  "homepage": "https://github.com/cataliwos/plugin.cwapp",
+  "type": "library",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Ikechukwu Okalia",
+      "email": "dev@ikechukwuokalia.com"
+    },
+    {
+      "name": "Tym Frontiers Ltd.",
+      "email": "dev@tymfrontiers.com"
+    }
+  ],
+  "require-dev": {},
+  "require": {
+    "cataliws/helper.cwapp" : ">=0.1@stable"
+  },
+  "autoload": {
+    "psr-4": {}
+  }
+}
