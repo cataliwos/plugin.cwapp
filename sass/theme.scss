@@ -1315,11 +1315,168 @@ table{
     color: white;
   }
 }
+// DragNav
+#cwos-dnav{
+  font-family: inherit;
+  position: sticky;
+  left: 0;
+  width: 100%;
+  display: block;
+  background-color: darken(#ecf0f1,5%);
+  height: $dnav-height;
+  overflow: hidden;
+  overflow-x: auto;
+  z-index: 200;
+  @include drop-shadow(#A9A9A9);
+  &.cartbot{ padding-right: 65px; }
+  &.relative{ position: relative; }
+  &.affix{
+    position: absolute;
+    top: -80px;
+    opacity: 0;
+    &.affixed{
+      position: fixed;
+    }
+  }
+  &.fixed{
+    position: fixed;
+    top: -80px;
+    opacity: 0;
+  }
+  ul{
+    min-width: 120%;
+    display: block;
+    position: relative;
+    padding: 0 40px 0 40px;
+    margin: 0;
+    list-style: none;
+    height: 100%;
+    li{
+      float: left;
+      padding: 0;
+      margin: 0;
+      height: $dnav-height;
+      font-size: 1.20em;
+      font-family: inherit;
+      @include animate-all;
+      &.cwos-button{
+        // display: none !important;
+        text-align: center;
+        background-color: inherit;
+        & a{
+          width: $dnav-height - 15;
+          height: $dnav-height - 15;
+          @include border-radius(100%);
+          -webkit-box-shadow: none !important;
+          -moz-box-shadow: none !important;
+          box-shadow: none !important;
+          padding: 16px;
+          margin: 8.5px;
+        }
+      }
+      a {
+        height: 100%;
+        width: 100%;
+        color: inherit;
+        display: block;
+        padding: 20px 15px;
+        &:hover{
+          color: inherit;
+          background-color: darken(#ecf0f1,8%);
+        }
+      }
+      &.cwos-dnav-current a{
+        border-bottom-width: 3px;
+        border-bottom-style: solid;
+        border-bottom-color: inherit;
+        padding-top:18.5px;
+        padding-bottom:22.5px;
+      }
+      &:last-child{
+        float: none;
+        margin: 0; padding: 0;
+        clear: both;
+        height: 0; width: 0;
+      }
+    }
+  }
+  #cwos-dnav-scroll-left, #cwos-dnav-scroll-right{
+    position: absolute;
+    height: $dnav-height;
+    width: 45px;
+    top: 0;
+    font-size: 1.5em;
+    padding: 17px 12px;
+    font-weight: lighter;
+    margin: 0;
+    display: none;
+    opacity: 0;
+    z-index: 200;
+    background-color: rgba(#edeeee,0.6);
+    @include animate-all;
+    &:hover{
+      background-color: #edeeee;
+      cursor: pointer;
+    }
+  }
+  #cwos-dnav-scroll-left{
+    left: 0;
+  }
+  #cwos-dnav-scroll-right{
+    right: 0;
+  }
+
+}
+#cwos-dnav-wrap{
+  position: relative;
+  width: 100%;
+  height: $dnav-height + 17;
+  overflow: hidden;
+  overflow-x: scroll;
+}
+#cwos-dnav-cartbot{
+  position: absolute;
+  right: 0; top: 0;
+  display: block;
+  width: 70px;
+  height: 100%;
+  overflow: hidden;
+  background-color: rgba(theme-color('coffee', bg), 0.5);
+  text-align: center;
+  color: #000;
+  text-align: center;
+  padding: 21px 14px;
+  z-index: 20;
+  @include animate-all;
+  .cb-icon{
+    display: block;
+    width: 30px; height: 30px;
+    background-color: rgba(#000, 0.9);
+    font-size: 1em;
+    color: #FFF;
+    padding: 4.5px;
+    font-weight: bolder;
+    @include -br(21px, -bottom-right);
+    position: absolute;
+    left: 0; top: 0;
+  }
+  .cb-val{
+    font-size: 1.18em;
+    font-weight: lighter;
+  }
+}
+#cwos-dnav-cartbot:hover{ opacity: 0.85; cursor: pointer;}
+#cwos-dnav-cartbot.cb-full{ background-color: (theme-color('amber', bg)) !important; color: #000; }
 // tablet view
 @media only screen and (min-width: 48em) {
 }
 // laptop view
 @media only screen and (min-width: 62em) {
+  .show-direction:hover #cwos-dnav-scroll-left,
+  .show-direction:hover #cwos-dnav-scroll-right{
+    display: block !important;
+    opacity: 1 !important;
+  }
 }
 // desktop view
 @media only screen and (min-width: 81em) {

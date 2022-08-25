@@ -3,6 +3,7 @@ if (typeof cwos == 'undefined') {
 }
 if ( typeof cwos.config !== 'object' ) cwos.config = {};
 cwos.ui = null; // UI theme
+cwos.nav = null; // UI Navigation
 function shrink_ph () {
   var ph;
   $(document).find('input, textarea').each(function(){
@@ -88,6 +89,12 @@ $(document).ready(function(){
     if (conf.handler == "DashUI" && conf.header.length && conf.autoinit) {
       cwos.ui = new DashUI(conf.header, conf.sidebar, notification, cart, confSetn);
       cwos.ui.init();
+    }
+  } if (typeof cwos.config.dnav == "object") {
+    let cartBot = typeof cwos.config.dnavCartbot == "object" ? cwos.config.dnavCartbot : {};
+    if (cwos.config.dnav.fetch.length) {
+      cwos.nav = new DragNav(cwos.config.dnav.fetch, cwos.config.dnav, cartBot);
+      cwos.nav.init();
     }
   }
 });

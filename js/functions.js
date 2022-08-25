@@ -578,13 +578,14 @@ function setGet(url = window.location.href, key = {}, val) {
   let params = {}
   if (typeof key == "object" && objectLength(key)) {
     $.each(key, function(k, v) {
-      if (typeof v == "string" && v.length) params[k] = v;
+      if (typeof v == "string" || typeof v == "number") params[k] = v;
     });
   } else if (typeof key == "string" && val) {
     params[key] = val;
   } else {
     return url;
   }
+
   // process 
   url = new URL(url);
   url.search = new URLSearchParams(params);

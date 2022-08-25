@@ -7718,4 +7718,201 @@ table.horizontal tr th, table.horizontal tr td {
   color: white;
 }
 
+#cwos-dnav {
+  font-family: inherit;
+  position: sticky;
+  left: 0;
+  width: 100%;
+  display: block;
+  background-color: #dde4e6;
+  height: 65px;
+  overflow: hidden;
+  overflow-x: auto;
+  z-index: 200;
+  -webkit-box-shadow: 0 1.5px 1.1px -1px #A9A9A9;
+  -moz-box-shadow: 0 1.5px 1.1px -1px #A9A9A9;
+  box-shadow: 0 1.5px 1.1px -1px #A9A9A9;
+}
+#cwos-dnav.cartbot {
+  padding-right: 65px;
+}
+#cwos-dnav.relative {
+  position: relative;
+}
+#cwos-dnav.affix {
+  position: absolute;
+  top: -80px;
+  opacity: 0;
+}
+#cwos-dnav.affix.affixed {
+  position: fixed;
+}
+#cwos-dnav.fixed {
+  position: fixed;
+  top: -80px;
+  opacity: 0;
+}
+#cwos-dnav ul {
+  min-width: 120%;
+  display: block;
+  position: relative;
+  padding: 0 40px 0 40px;
+  margin: 0;
+  list-style: none;
+  height: 100%;
+}
+#cwos-dnav ul li {
+  float: left;
+  padding: 0;
+  margin: 0;
+  height: 65px;
+  font-size: 1.2em;
+  font-family: inherit;
+  -webkit-transition: all 0.2s ease-in;
+  -moz-transition: all 0.2s ease-in;
+  -ms-transition: all 0.2s ease-in;
+  -o-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
+}
+#cwos-dnav ul li.cwos-button {
+  text-align: center;
+  background-color: inherit;
+}
+#cwos-dnav ul li.cwos-button a {
+  width: 50px;
+  height: 50px;
+  -webkit-border-radius: 100%;
+  -ms-border-radius: 100%;
+  -moz-border-radius: 100%;
+  border-radius: 100%;
+  -webkit-box-shadow: none !important;
+  -moz-box-shadow: none !important;
+  box-shadow: none !important;
+  padding: 16px;
+  margin: 8.5px;
+}
+#cwos-dnav ul li a {
+  height: 100%;
+  width: 100%;
+  color: inherit;
+  display: block;
+  padding: 20px 15px;
+}
+#cwos-dnav ul li a:hover {
+  color: inherit;
+  background-color: #d5dde0;
+}
+#cwos-dnav ul li.cwos-dnav-current a {
+  border-bottom-width: 3px;
+  border-bottom-style: solid;
+  border-bottom-color: inherit;
+  padding-top: 18.5px;
+  padding-bottom: 22.5px;
+}
+#cwos-dnav ul li:last-child {
+  float: none;
+  margin: 0;
+  padding: 0;
+  clear: both;
+  height: 0;
+  width: 0;
+}
+#cwos-dnav #cwos-dnav-scroll-left, #cwos-dnav #cwos-dnav-scroll-right {
+  position: absolute;
+  height: 65px;
+  width: 45px;
+  top: 0;
+  font-size: 1.5em;
+  padding: 17px 12px;
+  font-weight: lighter;
+  margin: 0;
+  display: none;
+  opacity: 0;
+  z-index: 200;
+  background-color: rgba(237, 238, 238, 0.6);
+  -webkit-transition: all 0.2s ease-in;
+  -moz-transition: all 0.2s ease-in;
+  -ms-transition: all 0.2s ease-in;
+  -o-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
+}
+#cwos-dnav #cwos-dnav-scroll-left:hover, #cwos-dnav #cwos-dnav-scroll-right:hover {
+  background-color: #edeeee;
+  cursor: pointer;
+}
+#cwos-dnav #cwos-dnav-scroll-left {
+  left: 0;
+}
+#cwos-dnav #cwos-dnav-scroll-right {
+  right: 0;
+}
+
+#cwos-dnav-wrap {
+  position: relative;
+  width: 100%;
+  height: 82px;
+  overflow: hidden;
+  overflow-x: scroll;
+}
+
+#cwos-dnav-cartbot {
+  position: absolute;
+  right: 0;
+  top: 0;
+  display: block;
+  width: 70px;
+  height: 100%;
+  overflow: hidden;
+  background-color: rgba(69, 54, 46, 0.5);
+  text-align: center;
+  color: #000;
+  text-align: center;
+  padding: 21px 14px;
+  z-index: 20;
+  -webkit-transition: all 0.2s ease-in;
+  -moz-transition: all 0.2s ease-in;
+  -ms-transition: all 0.2s ease-in;
+  -o-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
+}
+#cwos-dnav-cartbot .cb-icon {
+  display: block;
+  width: 30px;
+  height: 30px;
+  background-color: rgba(0, 0, 0, 0.9);
+  font-size: 1em;
+  color: #FFF;
+  padding: 4.5px;
+  font-weight: bolder;
+  -webkit-border-bottom-right-radius: 21px;
+  -ms-border-bottom-right-radius: 21px;
+  -moz-border-bottom-right-radius: 21px;
+  border-bottom-right-radius: 21px;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+#cwos-dnav-cartbot .cb-val {
+  font-size: 1.18em;
+  font-weight: lighter;
+}
+
+#cwos-dnav-cartbot:hover {
+  opacity: 0.85;
+  cursor: pointer;
+}
+
+#cwos-dnav-cartbot.cb-full {
+  background-color: #FFC107 !important;
+  color: #000;
+}
+
+@media only screen and (min-width: 62em) {
+  .show-direction:hover #cwos-dnav-scroll-left,
+.show-direction:hover #cwos-dnav-scroll-right {
+    display: block !important;
+    opacity: 1 !important;
+  }
+}
+
 /*# sourceMappingURL=theme.css.map */

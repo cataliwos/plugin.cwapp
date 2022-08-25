@@ -670,7 +670,456 @@ cwos.faderBox = {
   } // visible overlay
 };
 cwos.fbx = cwos.faderBox;
+// DragNav
+class DragNav {
+  constructor (navlist, options = {}, cartbot = {items:0, path: "/", onclick: false}) {
+    this.conf = {
+      iniTopPos:  0,
+      top:        0,
+      pos:        "affix", // affix > attach to element | ralative | fixed
+      clearElem:  "", // element to clear after display
+      fullWidth:  false, // whether to show on full page with or center on page
+      stickOn:    "", // Element to stick to when scrolling
+      container:  "body",
+      iconPos:    "left",
+      fetch:      "",
+      group: "base",
+      stateProgress: 2
+    }
+    this.confVal = {
+      iniTopPos:  "number",
+      top:        "number",
+      pos:        ["affix", "relative", "fixed"], // affix > attach to element | ralative | fixed
+      clearElem:  "string", // element to clear after display
+      fullWidth:  "boolean", // whether to show on full page with or center on page
+      stickOn:    "string", // Element to stick to when scrolling
+      container:  "string",
+      iconPos:    ["left", "right"],
+      fetch:      "string",
+      group: "string",
+    }
+    this.cartConf =  {
+      items:    "number",
+      show:     "boolean",
+      path:     "string",
+      onclick:  "string"
+    }
+    this.cartbot = {
+      items: 0,
+      show: false,
+      path: "#",
+      onclick: false
+    },
+    this.list = [];
+    this.ready = [];
+    this.state = 0;
 
+    this.setOptions(options);
+    this.setList(navlist);
+    this.setCart(cartbot);
+    
+  }
+  setOptions (options = {}) {
+    if (typeof options == "object" && objectLength(options)) {
+      let ths = this;
+      $.each(options, function(key, val){
+        if(key in ths.confVal) {
+          if (typeof ths.confVal[key] == "object") {
+            if (ths.confVal[key].includes(val)) ths.conf[key] = val;
+          } else {
+            if (typeof val == ths.confVal[key] && (ths.confVal[key] !== "string" || (ths.confVal[key] == "string" && val.length > 0))) {
+              ths.conf[key] = val;
+            }
+          }
+        }
+      });
+    }
+    if (this.conf.pos == "fixed") this.conf.container = "body";
+  }
+  setCart (options = {}) {
+    if (typeof options == "object" && objectLength(options)) {
+      let ths = this;
+      $.each(options, function(key, val){
+        if(key in ths.cartConf) {
+          if (typeof val == ths.cartConf[key] && (ths.cartConf[key] !== "string" || (ths.cartConf[key] == "string" && val.length > 0))) {
+            ths.cartbot[key] = val;
+          }
+        }
+      });
+    }
+    if (this.cartbot.show == true && (this.cartbot.path.length || this.cartbot.onclick.length)) {
+      this.ready.push("cartbot");
+    }
+    this.state ++;
+  }
+  setList (navlist) {
+    if (typeof navlist !== "object") {
+      this.conf.fetch = navlist;
+      this.getSrc(navlist, "setList", {data_type: "json"});
+    } else {
+      let list = [];
+      $.each(navlist, function(_index, link){
+        if (
+          "title" in link
+          && "path" in link
+          && "newtab" in link
+          && "onclick" in link
+          && "icon" in link
+          && "name" in link
+          && "classname" in link
+        ) {
+          list.push(link);
+        }
+      });
+      if (objectLength(list) > 0) {
+        this.ready.push("navlist");
+        this.state ++;
+      } 
+      this.list = list;
+    }
+  }
+  getSrc (path, callback, options = {type : "GET", data_type : "json"}) {
+    if (path) {
+      let ths = this;
+      const req = new Promise((resolve, reject) => {
+        $.ajax({
+          url :  path,
+          data: {group: ths.conf.group, format: "json"},
+          dataType : options.data_type !== undefined ? options.data_type : "json",
+          type : (options.type !== undefined && options.type in ["GET","POST"]) ? options.type : "GET",
+          success : function(resp) {
+            if( resp && (resp.status == '0.0' || resp.errors.length <= 0) && "data" in resp){
+              resolve(resp.data);
+            } else {
+              reject(`Invalid response (${resp.message}): ${resp.errors.join(" | ")}`);
+            }
+          },
+          error : function(xhr){
+            reject(`Failed to load recource: (${xhr.status}) ${xhr.statusText}`);
+          }
+        });
+      });
+      req.then((data) => {
+        this[callback](data);
+      }).catch((errormsg)=>{
+        console.error(errormsg);
+      });
+    }
+  }
+  extend () {
+    let ths = this;
+    $(document).find(".cwos-dnav-extend").each(function(_i, elem){
+      let data = elem.data;
+      if (
+        "title" in data
+        && "path" in data
+        && "newtab" in data
+        && "onclick" in data
+        && "icon" in data
+        && "name" in data
+        && "classname" in data
+      ) {
+        ths.list.push(data);
+      }
+    });
+  }
+  domCartbot () {
+    let dom = ``;
+    if (this.ready.includes("cartbot")) {
+      dom += `<div id="cwos-dnav-cartbot" class="cb-full" onclick="${this.cartbot.onclick.length ? `${this.cartbot.onclick()}` : `redirectTo('${this.cartbot.path}')`};">`;
+        dom += `<span class="cb-icon"><i class="fas fa-shopping-cart"></i></span>`;
+        dom += `<code id="cwos-dnav-cartbot-val" class="cb-val">${this.cartbot.items > 99 ? "99+" : this.cartbot.items}</code>`;
+      dom += `</div>`;
+    }
+    return dom;
+  }
+  domButtons () {
+    let dom = '';
+    dom += `<button class="cwos-button regular" id="cwos-dnav-scroll-left"><i class="fas fa-angle-left"></i></button>`;
+    dom += `<button class="cwos-button regular" id="cwos-dnav-scroll-right"><i class="fas fa-angle-right"></i></button>`;
+    return dom;
+  }
+  domNavlist () {
+    let dom = `<ul id="nvlst">`;
+    let ths = this;
+    $.each(this.list, function(_i, li){
+      dom += `<li`;
+      let cls_ls = [];
+      li.classname = li.classname.trim();
+        if(li.classname.length && li.classname !== null) {
+          cls_ls = li.classname.split(" ");
+        }
+        if( li.name == cwos.config.page.name ) cls_ls.push("cwos-dnav-current");
+        if (cls_ls.length) dom += ` class="${cls_ls.join(' ')}"`;
+      dom += `>`;
+        dom += `<a`;
+          if( li.onclick !== '' && li.onclick !== undefined && li.onclick !== null ){
+            dom += ` onclick="${li.onclick}"`;
+          } if (li.newtab == true) {
+            dom += ` target="_blank"`;
+          }
+          dom += ` href="${li.path}"`;
+        dom += `>`;
+        dom += `${(ths.conf.iconPos == 'left' ? li.icon : '')} ${li.title} ${(ths.conf.iconPos == 'right' ? li.icon : '')}`;
+        dom += `</a>`;
+      dom += `</li>`;
+      dom += `<li class="clr"></li>`;
+    });
+    dom += `</ul>`;
+    return dom;
+  }
+  getDom () {
+    let dom = '';
+    if (this.ready.includes("navlist")) {
+      dom += `<nav id="cwos-dnav" class="${this.conf.pos} ${this.ready.includes("cartbot") ? ' cartbot' : ''}">`;
+        dom += this.domCartbot();
+        if (!this.conf.fullWidth) dom += `<div class="view-space">`;
+        dom += this.domButtons();
+        dom += `<div id="cwos-dnav-wrap" class="show-direction">`;
+          dom += this.domNavlist();
+        dom += "</div>";
+        if (!this.conf.fullWidth) dom += `</div>`;
+      dom += `</nav>`;
+    }
+    return dom;
+  }
+  startServices () {
+    let ths = this;
+    $(window).bind('resize',this.width.bind(this));
+    $(document).on('mouseover','#cwos-dnav.show-direction',function(){
+      $('#cwos-dnav #cwos-dnav-scroll-left, #cwos-dnav #cwos-dnav-scroll-right').css({
+        'display' : 'block',
+        'opacity' : 1
+      });
+      $(document).on('mouseout','#cwos-dnav.show-direction',function(){
+        $('#cwos-dnav #cwos-dnav-scroll-left, #cwos-dnav #cwos-dnav-scroll-right').css({
+            'display' : 'none',
+            'opacity' : 0
+          });
+      });
+    });
+    let affixNav = $(document).find('#cwos-dnav.affix');
+    $(window).scroll(function(){
+      if( $(document).find('#cwos-dnav.fixed').length > 0 && ths.conf.iniTopPos > 0 ){
+        let stickon = $(ths.conf.stickOn);
+        let eTop = (stickon.offset().top + stickon.outerHeight()) - $(window).scrollTop();
+        eTop = eTop >= ths.conf.top ? eTop : ths.conf.top;
+        if( stickon.length > 0 ){
+          let nav = $(document).find('#cwos-dnav.affix').length > 0
+          ? $(document).find('#cwos-dnav.affix')
+          : $(document).find('#cwos-dnav.fixed');
+          nav.css({
+            top : eTop+'px'
+          });
+        }
+      }
+    });
+    if (ths.conf.pos == "affix" && $(`${ths.conf.container}`).length && affixNav.length) {
+      let affixWrp = $(`${ths.conf.container}`);
+      let lastScrollTop = 0;
+      affixWrp.on("scroll", "", function(){
+        let st = $(this).scrollTop();
+        if (st > lastScrollTop) {
+          // downscroll code (-)
+          if (affixNav.hasClass("affixed")) {
+            affixNav.removeClass("affixed"); 
+            affixNav.css({
+              // width: `100%`,
+              left: `0`,
+              top: `0`
+            });
+          }
+        } else {
+          if (!affixNav.hasClass("affixed")) {
+            affixNav.css({
+              // width: `${affixWrp.innerWidth()}px`,
+              left: `${affixWrp.offset().left}px`,
+              top: `${affixWrp.offset().top}px`
+            });
+            affixNav.addClass("affixed"); 
+          }
+        }
+        lastScrollTop = st <= 0 ? 0 : st;
+      });
+    }
+    $(document).on('click','#cwos-dnav #cwos-dnav-scroll-left',function(){
+      let pos = $('#cwos-dnav #cwos-dnav-wrap').scrollLeft() - 100;
+      $('#cwos-dnav #cwos-dnav-wrap').animate({scrollLeft:pos},300);
+    });
+    $(document).on('click','#cwos-dnav #cwos-dnav-scroll-right',function(){
+      var pos = $('#cwos-dnav #cwos-dnav-wrap').scrollLeft() + 100;
+      $('#cwos-dnav #cwos-dnav-wrap').animate({scrollLeft:pos},300);
+    });
+    $(window).bind("dnavLoaded", function(){
+      setTimeout(function(){
+        let cur_nv = $(document).find(".cwos-dnav-current").eq(0);
+        if (cur_nv.length) {
+          let min_left = cur_nv.offset().left + cur_nv.outerWidth();
+          let wrpr = $(document).find("#cwos-dnav-wrap");
+          if (min_left > wrpr.innerWidth()) {
+            wrpr.animate({
+              scrollLeft : min_left - wrpr.innerWidth()
+            },550);
+          }
+        }
+      },1500);
+    });
+  }
+  show () {
+    let conf = this.conf, ths = this;
+    if( $(document).find('#cwos-dnav.fixed').length > 0 ){
+      let stickon = $(conf.stickOn);
+      let ptop = stickon.length > 0
+          ? ( stickon.offset().top + stickon.outerHeight() ) - $(window).scrollTop()
+          : (
+            typeof conf.iniTopPos !== undefined ? conf.iniTopPos : 0
+          ),
+          nav = $(document).find('#cwos-dnav.affix').length > 0
+            ? $(document).find('#cwos-dnav.affix')
+            : $(document).find('#cwos-dnav.fixed');
+      nav.css("top",`${ptop}px`);
+      nav.animate({
+        opacity : 1
+      }, 450,function(){
+        ths.width();
+        if( conf.clearElem.length > 0 ){
+          let elm = $(conf.clearElem),
+              margTop = elm.length <= 0 ? 0 : parseFloat( elm.css('margin-top').replace('px','') );
+          if( elm.length > 0 ){
+            elm.animate({marginTop : nav.outerHeight() + margTop },200);
+          }
+        }
+      });
+    } 
+    let affixed = $(document).find('#cwos-dnav.affix');
+    if (affixed.length) {
+      affixed.animate({
+        opacity : 1,
+        top: 0
+      }, 450,function(){
+        ths.width();
+        if( conf.clearElem.length > 0 ){
+          let elm = $(conf.clearElem);
+          if( elm.length > 0 ){
+            elm.animate({paddingTop : affixed.outerHeight() },200);
+          }
+        }
+      });
+    }
+  }
+  hide () {
+    let ths = this;
+    if( $(document).find('#cwos-dnav.affix, #cwos-dnav.fixed').length > 0 ){
+      let nav = $(document).find('#cwos-dnav.affix').length > 0
+            ? $(document).find('#cwos-dnav.affix')
+            : $(document).find('#cwos-dnav.fixed'),
+          offtop = nav.outerHeight();
+      nav.animate({
+        top : -offtop,
+        opacity : 0
+      }, 200,function(){
+        // nav.addClass('hidn');
+        if( ths.conf.clearElem.length > 0 ){
+          let elm = $(ths.conf.clearElem),
+              margTop = elm.length <= 0 ? 0 : parseFloat( elm.css('margin-top').replace('px','') );
+          if( elm.length > 0 ){
+            elm.animate({marginTop : nav.outerHeight() - margTop},200);
+          }
+        }
+      });
+    }
+  }
+  showDirection () {
+    let elem = $(document).find('#cwos-dnav');
+    if( elem.length > 0 ){
+      let win_width = $("#cwos-dnav-wrap").innerWidth(),
+          nav_width = 21;
+      $(document).find('#cwos-dnav ul li').each(function(){
+        nav_width += $(this).outerWidth();
+      });
+      if( nav_width > win_width ){
+        elem.addClass('show-direction');
+      }else{
+        // move to extreme left
+        $('#cwos-dnav #cwos-dnav-wrap').animate({scrollLeft:0},300)
+        elem.removeClass('show-direction');
+      }
+    }
+  }
+  affixed (wdt = 0, lft = 0) {
+    if (this.conf.pos == "affix") {
+      let affixWrp = $(this.conf.container);
+      if (affixWrp.length) {
+        let affixNav = affixWrp.find('#cwos-dnav.affix');
+        if (affixNav.length) {
+          wdt = wdt ? wdt : affixWrp.innerWidth();
+          // lft = lft ? lft : affixWrp.offset().left;
+          // console.log(`[wdt]: (${wdt}) [lft]: (${lft})`);
+          affixNav.css({
+            left: `${(affixNav.hasClass('affixed') ? lft : 0)}px`,
+            width: `${wdt}px`
+          }, 250);
+        }
+      }
+    }
+  }
+  width (){
+    let elem = $(document).find('#cwos-dnav');
+    if( elem.length > 0 ){
+      var nav_width = 7,
+          navs = $(document).find('#cwos-dnav ul li');
+      navs.each(function(i){
+        nav_width += $(this).outerWidth();
+      });
+      $(document).find('#cwos-dnav ul#nvlst').width(nav_width);
+      this.showDirection();
+    }
+    this.affixed();
+  }
+  cartValue (num = 0) {
+    if (typeof num == "number") {
+      window.cwos.cartValue = num;
+      num = (num < 100) ? num : `99+`;
+      $(document).find(`#cwos-dnav-cartbot #cwos-dnav-cartbot-val`).text(num);
+      if (num == 0) {
+        $(document).find(`#cwos-dnav-cartbot`).removeClass("cb-full");
+      } else {
+        $(document).find(`#cwos-dnav-cartbot`).addClass("cb-full");
+      }
+    }
+  }
+  init () {
+    window.dnavIntervCnt = 0;
+    window.dnavState = setInterval(this.doInit.bind(this),100);
+  }
+  doInit () {
+    window.dnavIntervCnt ++;
+    if (this.state >= this.conf.stateProgress) {
+      clearInterval(window.dnavState);
+      delete window.dnavState;
+      delete window.dnavIntervCnt;
+      // proceed
+      // make array unique
+      this.ready = this.ready.filter(function(item, pos, self) {
+        return self.indexOf(item) == pos;
+      });
+      $(this.conf.container).prepend(this.getDom());
+      this.show();
+      this.showDirection();
+      this.startServices();
+      $.event.trigger({
+        type:    "dnavLoaded",
+        message: "DragNav loadded successfully.",
+        time:    new Date()
+      });
+    } if (window.dnavIntervCnt >= 10 * 10) {
+      clearInterval(window.dnavState);
+      delete window.dnavState;
+      delete window.dnavIntervCnt;
+    }
+  }
+}
+// DragNav
 (function (){
   $(document).on("change", "input[type='file'][data-action='cwos-file-init']", function(){
     if (this.files.length > 0) {
