@@ -77,6 +77,10 @@ cwos.setup = function () {
     }
   });
   shrink_ph();
+  if (typeof cwos.config.ui == "object" && cwos.config.ui.handler == "DashUI") {
+    alert("<h3>Please wait</h3> <p><i class='fas fa-spinner fa-spin'></i> We're getting things ready</p>", {type: "progress"});
+  }
+
 })();
 
 $(document).ready(function(){
@@ -92,8 +96,8 @@ $(document).ready(function(){
     }
   } if (typeof cwos.config.dnav == "object") {
     let cartBot = typeof cwos.config.dnavCartbot == "object" ? cwos.config.dnavCartbot : {};
-    if (cwos.config.dnav.fetch.length) {
-      cwos.nav = new DragNav(cwos.config.dnav.fetch, cwos.config.dnav, cartBot);
+    if (cwos.config.dnav.get.length) {
+      cwos.nav = new DragNav(cwos.config.dnav.get, cwos.config.dnav, cartBot);
       cwos.nav.init();
     }
   }

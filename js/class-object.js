@@ -682,7 +682,7 @@ class DragNav {
       stickOn:    "", // Element to stick to when scrolling
       container:  "body",
       iconPos:    "left",
-      fetch:      "",
+      get:      "", // /path/to/load/navigation/list
       group: "base",
       stateProgress: 2
     }
@@ -695,7 +695,7 @@ class DragNav {
       stickOn:    "string", // Element to stick to when scrolling
       container:  "string",
       iconPos:    ["left", "right"],
-      fetch:      "string",
+      get:      "string",
       group: "string",
     }
     this.cartConf =  {
@@ -754,7 +754,7 @@ class DragNav {
   }
   setList (navlist) {
     if (typeof navlist !== "object") {
-      this.conf.fetch = navlist;
+      this.conf.get = navlist;
       this.getSrc(navlist, "setList", {data_type: "json"});
     } else {
       let list = [];
