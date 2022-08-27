@@ -484,7 +484,13 @@ function clock($weekNow, $dateNow, $tymNow, $secNow){
 	$tymNow.text(($prop.hour <10 ? '0'+$prop.hour : $prop.hour)+':'+($prop.minute <10 ? '0'+$prop.minute : $prop.minute));
 	$secNow.text(':'+($prop.second <10 ? '0'+$prop.second : $prop.second));
 }
-function redirectTo(url){ if(url){ document.location=url;	}else{	return false; } }
+function redirectTo (url, newtab = false) {
+  if (newtab) {
+    window.open(url, '_blank').focus();
+  } else {
+    document.location = url;
+  }
+}
 
 function encodeURL(toEncode) {
     return encodeURIComponent(toEncode)

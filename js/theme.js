@@ -78,7 +78,7 @@ cwos.setup = function () {
   });
   shrink_ph();
   if (typeof cwos.config.ui == "object" && cwos.config.ui.handler == "DashUI") {
-    alert("<h3>Please wait</h3> <p><i class='fas fa-spinner fa-spin'></i> We're getting things ready</p>", {type: "progress"});
+    // alert("<h3>Please wait</h3> <p>We're getting things ready</p>", {type: "progress"});
   }
 
 })();
