@@ -355,7 +355,7 @@ cwos.form = {
 };
 cwos.form.initFile = function (fileInput, statBar) {
   if ($(statBar).length <= 0) {
-    console.error("DOM: stats bar not provided");
+    console.error("DOM: status bar not provided");
   }
   let fileProps = [];
   if( fileInput.files.length > 0 ){
@@ -1120,6 +1120,71 @@ class DragNav {
   }
 }
 // DragNav
+// Cookie
+class Cookie {
+  constructor(unique = false) {
+    this.expiry = {
+      second: ((86400e3 / 24) / 60) / 60,
+      minute: (86400e3 / 24) / 60,
+      hour: 86400e3 / 24,
+      day: 86400e3,
+      week: 86400e3 * 7,
+      month: 86400e3 * 30.4167,
+      year: (86400e3 * 30.4167) * 12
+    }
+    this.unique = typeof unique == "boolean" ? unique : false;
+  }
+  get (name, domain = "") {
+    if (name) {
+      name = this.getName(name, domain);
+      let matches = document.cookie.match(new RegExp(
+        "(?:^|; )" + name.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g, '\\$1') + "=([^;]*)"
+      ));
+      return matches ? decodeURIComponent(matches[1]) : undefined;
+    }
+    return undefined;
+  }
+  set (name, value, options = {}) {
+    if (name) {
+      options["sameSite"] = "strict";
+      if ("expires" in options && typeof options.expires == "string") {
+        let regex = /^([\d]{1,99})\s+(seconds?|hours?|days?|weeks?|months?|years?)$/gmi;
+        let split = options.expires.trim().split(regex);
+        if (typeof split == "object" && objectLength(split)) {
+          split = split.filter(String);
+          if (parseInt(split[0]) > 0 && split[1].toLowerCase() in this.expiry) {
+            let num = parseInt(split[0]) * this.expiry[split[1].toLowerCase()];
+            options.expires = (new Date(Date.now() + num)).toUTCString();
+          }
+        }
+      }
+      let updatedCookie = encodeURIComponent(this.getName(name, options.domain)) + "=" + encodeURIComponent(value);
+      for (let optionKey in options) {
+        updatedCookie += "; " + optionKey;
+        let optionValue = options[optionKey];
+        if (optionValue !== true) {
+          updatedCookie += "=" + optionValue;
+        }
+      }
+      document.cookie = updatedCookie;
+      return true;
+    }
+    return false;
+  }
+  getName (name, domain = "") {
+    domain = domain && domain.length ? domain : location.hostname;
+    name = !this.unique ? name : `${name}.${domain}`;
+    return name.replaceAll(/\./ig,'-');
+  }
+  delete (name, dmn = "") {
+    this.set(name, "", {
+      domain: dmn,
+      'max-age': -1
+    });
+  }
+}
+// Cookie
+
 (function (){
   $(document).on("change", "input[type='file'][data-action='cwos-file-init']", function(){
     if (this.files.length > 0) {
