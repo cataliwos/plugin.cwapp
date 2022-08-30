@@ -46,6 +46,9 @@ String.prototype.isValidURL = function () {
     '(\\#[-a-z\\d_]*)?$','i'); // fragment locator
   return !!pattern.test(this);
 }
+String.prototype.is_valid_url = function () {
+  return this.isValidURL();
+}
 String.prototype.escapeHTML = function () {
   return this.replace(/&/g, "&amp;")
              .replace(/</g, "&lt;")

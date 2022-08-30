@@ -627,11 +627,11 @@ cwos.faderBox = {
             cwos.faderBox.removeLoader(vi);
           }else{
             callBack(data);
-            if( options.overlay || options.showLoader ) faderBox.close(vi);
+            if( options.overlay || options.showLoader ) cwos.faderBox.close(vi);
           }
         },
         error: function(xhr, text){
-          faderBox.close(vi);
+          cwos.faderBox.close(vi);
           alert(`<h2>[5.1]: Error: (${xhr.status}) ${xhr.statusText} </h2> <p>Failed to load requested recources.</p>`,{type:'error'});
         }
       });
