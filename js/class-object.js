@@ -300,13 +300,14 @@ cwos.form = {
           if (data.status == "0.0" || data.status == "00") {
             if(resetForm)  $(form).trigger('reset');
             cwos.alert("<h3>[0.0]: Success!</h3> <div>" + data.message + "</div>",{type:'success',tymout:18000, exit:true});
-            if(typeof callback == "function") { callback(data); };
+            if(callback) { callback(data); };
           } else if (data.status == "0.1") { // No change(s) made
             cwos.alert("<h3>[0.1]: No change(s) made.</h3> <div>" + data.message + "</div>",{type:'message',tymout:15000, exit:true});
           } else if (data.status == "0.2") { // No result(s) found
             cwos.alert("<h3>[0.2]: No result(s) found.</h3> <div>" + data.message + "</div>",{type:'message',tymout:15000, exit:true});
           } else if (data.status == "0.3") { // Action required
             cwos.alert("<h3>[0.3]: Action required.</h3> <div>" + data.message + "</div>",{type:'info',tymout:15000, exit:true});
+            if(callback) { callback(data); };
           } else {
             var html = '<h3> ['+data.status+']: '+data.message+'</h3>';
             html += '<strong>Errors:</strong> <ol>';
