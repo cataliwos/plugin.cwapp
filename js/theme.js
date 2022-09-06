@@ -14,6 +14,41 @@ function shrink_ph () {
     }
   });
 }
+const opnActnBtn = () => {
+  let wrpr = $(document).find("#actn-btns");
+  if (wrpr.length > 0 && !wrpr.hasClass("open")) {
+    let wt = 250 + 24;
+    let ht = 65;
+    ht += wrpr.find("#actn-btn-wrp").outerHeight();
+    wrpr.animate({ width : wt }, 200, function() {
+      wrpr.animate({height : ht}, 250, function() {
+        wrpr.addClass("open");
+        wrpr.find("#actvt").addClass("open").html(` <i class="fad fa-times fa-lg"></i> Close`);
+      });
+    });
+  }
+};
+const clsActnBtn = () => {
+  let wrpr = $(document).find("#actn-btns");
+  if (wrpr.length > 0 && wrpr.hasClass("open") ) {
+    let wt = 190 + 0;
+    let ht = 65;
+    wrpr.animate({ height : ht }, 200, function() {
+      wrpr.animate({ width : wt}, 250, function() {
+        wrpr.removeClass("open");
+        wrpr.find("#actvt").removeClass("open").html(` <i class="fad fa-angle-right fa-lg"></i> Start`);
+      });
+    });
+
+  }
+};
+const tgglActnBtn = () => {
+ let wrpr = $(document).find("#actn-btns");
+ if (wrpr.length > 0) {
+   if (wrpr.hasClass("open")) { clsActnBtn(); } else { opnActnBtn(); }
+ }
+};
+
 
 function shrinkPlaceholder () { return shrink_ph(); }
 var btnRipple = function (e) {
