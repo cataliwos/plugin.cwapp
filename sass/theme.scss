@@ -717,7 +717,6 @@ input:invalid, select:invalid, textarea:invalid{
   font-weight: bold;
 }
 [required] +::before{
-  content: "GG";
   display: inline-block;
   color: red;
 }

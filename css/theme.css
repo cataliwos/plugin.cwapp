@@ -6316,7 +6316,6 @@ input:invalid, select:invalid, textarea:invalid {
 }
 
 [required] + ::before {
-  content: "GG";
   display: inline-block;
   color: red;
 }
