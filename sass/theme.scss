@@ -397,9 +397,6 @@ input.hidden{
           border-color: lighten(map.get($color, bg),22%) !important;
           &:focus, &:valid, &.has-val{ border-color:map.get($color, bg) !important; }
         }
-        // &:invalid{
-        //   border-color: darken(theme-color('red', bg),18%) !important;
-        // }
       }
       &.color-bg, .color-bg {
         & textarea:valid, & textarea:focus, & textarea.has-val,
@@ -430,6 +427,17 @@ input.hidden{
           }
         }
       }
+      input[type=checkbox]:checked + label,
+      input[type=radio]:checked + label,
+      input[type=checkbox]:checked + label::before,
+      input[type=radio]:checked + label::before {
+        @if in-list($color-name, $bright-colors) {
+          color: darken(map.get($color, bg), 14%) !important;
+        } @else {
+          color: map.get($color, bg) !important;
+        }
+      }
+
     }
   }
 }
