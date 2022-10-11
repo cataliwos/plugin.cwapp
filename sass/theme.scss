@@ -22,23 +22,68 @@
 }
 @each $color-name, $color in $theme-colors {
   @if (in-list($color-name, $none-theme-color) == false) and $color-name != null {
-    body.theme-#{$color-name} a {
-      outline:none;
-      border:none;
-      text-decoration:none;
-      @include animate-all;
-      &:focus{outline: none;}
-      @if in-list($color-name, $bright-colors) {
-        color: darken(map.get($color, bg),14%);
-      } @else {
-        color: map.get($color, bg);
+    body.theme-#{$color-name} {
+      a {
+        outline:none;
+        border:none;
+        text-decoration:none;
+        @include animate-all;
+        &:focus{outline: none;}
+        @if in-list($color-name, $bright-colors) {
+          color: darken(map.get($color, bg),14%);
+        } @else {
+          color: map.get($color, bg);
+        }
+        @if in-list($color-name, $dark-colors) {
+          &:visited{ color: lighten(map.get($color, bg),8%); outline:none; }
+          &:hover{ color: lighten(map.get($color, bg),21%); }
+        } @else {
+          &:visited{ color: darken(map.get($color, bg),8%); outline:none; }
+          &:hover{ color: darken(map.get($color, bg),21%); }
+        }
       }
-      @if in-list($color-name, $dark-colors) {
-        &:visited{ color: lighten(map.get($color, bg),8%); outline:none; }
-        &:hover{ color: lighten(map.get($color, bg),21%); }
-      } @else {
-        &:visited{ color: darken(map.get($color, bg),8%); outline:none; }
-        &:hover{ color: darken(map.get($color, bg),21%); }
+      @if (in-list($color-name, $bright-colors) == false) {
+        #cwos-header{
+          background-color: map.get($color, bg) !important;
+          color: map.get($color, fg) !important;
+        }
+        #cwos-navbar-toggle:hover,
+        #cwos-sidebar-toggle:hover,
+        #cwos-navbar-toggle.active,
+        #cwos-sidebar-toggle.active {
+          color: map.get($color, bg) !important;
+        }
+        #cwos-dnav{
+          color: map.get($color, bg) !important;
+          .cwos-dnav-current a{
+            border-top-color: map.get($color, bg) !important;
+          }
+          li a{
+            color: map.get($color, bg) !important;
+          }
+          li a:hover{
+            color: map.get($color, fg) !important;;
+            background-color: map.get($color, bg) !important;;
+          }
+        }
+        #cwos-sltitle h3{
+          color: map.get($color, bg) !important;
+        }
+        #cwos-sptltoggl:hover{
+          background-color: map.get($color, bg) !important;
+        }
+        #cwos-sllinks li:hover {
+          color: map.get($color, bg) !important;
+        }
+        .cwos-sidenav li::after{
+          background-color: map.get($color, bg) !important;
+        }
+        .cwos-sidenav li:hover{
+          color: map.get($color, bg) !important;
+        }
+        .cwos-sidenav li.cwos-curnav{
+          border-left-color: map.get($color, bg) !important;
+        }
       }
     }
     body.theme-#{$color-name} aside#cwos-sidebar {
