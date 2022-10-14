@@ -1668,7 +1668,7 @@ body.theme-native #cwos-dnav li a:hover {
 body.theme-native #cwos-sltitle h3 {
   color: #1976D2 !important;
 }
-body.theme-native #cwos-sptltoggl:hover {
+body.theme-native #cwos-sptltoggl:hover, body.theme-native #cwos-sptltoggl.btn-opn {
   background-color: #1976D2 !important;
 }
 body.theme-native #cwos-sllinks li:hover {
@@ -1731,7 +1731,7 @@ body.theme-gold #cwos-dnav li a:hover {
 body.theme-gold #cwos-sltitle h3 {
   color: #EBBD63 !important;
 }
-body.theme-gold #cwos-sptltoggl:hover {
+body.theme-gold #cwos-sptltoggl:hover, body.theme-gold #cwos-sptltoggl.btn-opn {
   background-color: #EBBD63 !important;
 }
 body.theme-gold #cwos-sllinks li:hover {
@@ -1816,7 +1816,7 @@ body.theme-red #cwos-dnav li a:hover {
 body.theme-red #cwos-sltitle h3 {
   color: #F44336 !important;
 }
-body.theme-red #cwos-sptltoggl:hover {
+body.theme-red #cwos-sptltoggl:hover, body.theme-red #cwos-sptltoggl.btn-opn {
   background-color: #F44336 !important;
 }
 body.theme-red #cwos-sllinks li:hover {
@@ -1879,7 +1879,7 @@ body.theme-blue #cwos-dnav li a:hover {
 body.theme-blue #cwos-sltitle h3 {
   color: #2196F3 !important;
 }
-body.theme-blue #cwos-sptltoggl:hover {
+body.theme-blue #cwos-sptltoggl:hover, body.theme-blue #cwos-sptltoggl.btn-opn {
   background-color: #2196F3 !important;
 }
 body.theme-blue #cwos-sllinks li:hover {
@@ -1942,7 +1942,7 @@ body.theme-light-blue #cwos-dnav li a:hover {
 body.theme-light-blue #cwos-sltitle h3 {
   color: #03A9F4 !important;
 }
-body.theme-light-blue #cwos-sptltoggl:hover {
+body.theme-light-blue #cwos-sptltoggl:hover, body.theme-light-blue #cwos-sptltoggl.btn-opn {
   background-color: #03A9F4 !important;
 }
 body.theme-light-blue #cwos-sllinks li:hover {
@@ -2005,7 +2005,7 @@ body.theme-midnight-blue #cwos-dnav li a:hover {
 body.theme-midnight-blue #cwos-sltitle h3 {
   color: #2c3e50 !important;
 }
-body.theme-midnight-blue #cwos-sptltoggl:hover {
+body.theme-midnight-blue #cwos-sptltoggl:hover, body.theme-midnight-blue #cwos-sptltoggl.btn-opn {
   background-color: #2c3e50 !important;
 }
 body.theme-midnight-blue #cwos-sllinks li:hover {
@@ -2068,7 +2068,7 @@ body.theme-blue-grey #cwos-dnav li a:hover {
 body.theme-blue-grey #cwos-sltitle h3 {
   color: #607D8B !important;
 }
-body.theme-blue-grey #cwos-sptltoggl:hover {
+body.theme-blue-grey #cwos-sptltoggl:hover, body.theme-blue-grey #cwos-sptltoggl.btn-opn {
   background-color: #607D8B !important;
 }
 body.theme-blue-grey #cwos-sllinks li:hover {
@@ -2131,7 +2131,7 @@ body.theme-grey #cwos-dnav li a:hover {
 body.theme-grey #cwos-sltitle h3 {
   color: #9E9E9E !important;
 }
-body.theme-grey #cwos-sptltoggl:hover {
+body.theme-grey #cwos-sptltoggl:hover, body.theme-grey #cwos-sptltoggl.btn-opn {
   background-color: #9E9E9E !important;
 }
 body.theme-grey #cwos-sllinks li:hover {
@@ -2194,7 +2194,7 @@ body.theme-green #cwos-dnav li a:hover {
 body.theme-green #cwos-sltitle h3 {
   color: #4CAF50 !important;
 }
-body.theme-green #cwos-sptltoggl:hover {
+body.theme-green #cwos-sptltoggl:hover, body.theme-green #cwos-sptltoggl.btn-opn {
   background-color: #4CAF50 !important;
 }
 body.theme-green #cwos-sllinks li:hover {
@@ -2257,7 +2257,7 @@ body.theme-nigeria-green #cwos-dnav li a:hover {
 body.theme-nigeria-green #cwos-sltitle h3 {
   color: #008751 !important;
 }
-body.theme-nigeria-green #cwos-sptltoggl:hover {
+body.theme-nigeria-green #cwos-sptltoggl:hover, body.theme-nigeria-green #cwos-sptltoggl.btn-opn {
   background-color: #008751 !important;
 }
 body.theme-nigeria-green #cwos-sllinks li:hover {
@@ -2342,7 +2342,7 @@ body.theme-green-sea #cwos-dnav li a:hover {
 body.theme-green-sea #cwos-sltitle h3 {
   color: #16a085 !important;
 }
-body.theme-green-sea #cwos-sptltoggl:hover {
+body.theme-green-sea #cwos-sptltoggl:hover, body.theme-green-sea #cwos-sptltoggl.btn-opn {
   background-color: #16a085 !important;
 }
 body.theme-green-sea #cwos-sllinks li:hover {
@@ -2427,7 +2427,7 @@ body.theme-amber #cwos-dnav li a:hover {
 body.theme-amber #cwos-sltitle h3 {
   color: #FFC107 !important;
 }
-body.theme-amber #cwos-sptltoggl:hover {
+body.theme-amber #cwos-sptltoggl:hover, body.theme-amber #cwos-sptltoggl.btn-opn {
   background-color: #FFC107 !important;
 }
 body.theme-amber #cwos-sllinks li:hover {
@@ -2490,7 +2490,7 @@ body.theme-asphalt #cwos-dnav li a:hover {
 body.theme-asphalt #cwos-sltitle h3 {
   color: #34495e !important;
 }
-body.theme-asphalt #cwos-sptltoggl:hover {
+body.theme-asphalt #cwos-sptltoggl:hover, body.theme-asphalt #cwos-sptltoggl.btn-opn {
   background-color: #34495e !important;
 }
 body.theme-asphalt #cwos-sllinks li:hover {
@@ -2553,7 +2553,7 @@ body.theme-pink #cwos-dnav li a:hover {
 body.theme-pink #cwos-sltitle h3 {
   color: #E91E63 !important;
 }
-body.theme-pink #cwos-sptltoggl:hover {
+body.theme-pink #cwos-sptltoggl:hover, body.theme-pink #cwos-sptltoggl.btn-opn {
   background-color: #E91E63 !important;
 }
 body.theme-pink #cwos-sllinks li:hover {
@@ -2616,7 +2616,7 @@ body.theme-purple #cwos-dnav li a:hover {
 body.theme-purple #cwos-sltitle h3 {
   color: #9C27B0 !important;
 }
-body.theme-purple #cwos-sptltoggl:hover {
+body.theme-purple #cwos-sptltoggl:hover, body.theme-purple #cwos-sptltoggl.btn-opn {
   background-color: #9C27B0 !important;
 }
 body.theme-purple #cwos-sllinks li:hover {
@@ -2679,7 +2679,7 @@ body.theme-deep-purple #cwos-dnav li a:hover {
 body.theme-deep-purple #cwos-sltitle h3 {
   color: #673AB7 !important;
 }
-body.theme-deep-purple #cwos-sptltoggl:hover {
+body.theme-deep-purple #cwos-sptltoggl:hover, body.theme-deep-purple #cwos-sptltoggl.btn-opn {
   background-color: #673AB7 !important;
 }
 body.theme-deep-purple #cwos-sllinks li:hover {
@@ -2742,7 +2742,7 @@ body.theme-olive #cwos-dnav li a:hover {
 body.theme-olive #cwos-sltitle h3 {
   color: #808000 !important;
 }
-body.theme-olive #cwos-sptltoggl:hover {
+body.theme-olive #cwos-sptltoggl:hover, body.theme-olive #cwos-sptltoggl.btn-opn {
   background-color: #808000 !important;
 }
 body.theme-olive #cwos-sllinks li:hover {
@@ -2805,7 +2805,7 @@ body.theme-indigo #cwos-dnav li a:hover {
 body.theme-indigo #cwos-sltitle h3 {
   color: #3F51B5 !important;
 }
-body.theme-indigo #cwos-sptltoggl:hover {
+body.theme-indigo #cwos-sptltoggl:hover, body.theme-indigo #cwos-sptltoggl.btn-opn {
   background-color: #3F51B5 !important;
 }
 body.theme-indigo #cwos-sllinks li:hover {
@@ -2890,7 +2890,7 @@ body.theme-teal #cwos-dnav li a:hover {
 body.theme-teal #cwos-sltitle h3 {
   color: #009688 !important;
 }
-body.theme-teal #cwos-sptltoggl:hover {
+body.theme-teal #cwos-sptltoggl:hover, body.theme-teal #cwos-sptltoggl.btn-opn {
   background-color: #009688 !important;
 }
 body.theme-teal #cwos-sllinks li:hover {
@@ -2975,7 +2975,7 @@ body.theme-carrot #cwos-dnav li a:hover {
 body.theme-carrot #cwos-sltitle h3 {
   color: #e67e22 !important;
 }
-body.theme-carrot #cwos-sptltoggl:hover {
+body.theme-carrot #cwos-sptltoggl:hover, body.theme-carrot #cwos-sptltoggl.btn-opn {
   background-color: #e67e22 !important;
 }
 body.theme-carrot #cwos-sllinks li:hover {
@@ -3038,7 +3038,7 @@ body.theme-pumpkin #cwos-dnav li a:hover {
 body.theme-pumpkin #cwos-sltitle h3 {
   color: #d35400 !important;
 }
-body.theme-pumpkin #cwos-sptltoggl:hover {
+body.theme-pumpkin #cwos-sptltoggl:hover, body.theme-pumpkin #cwos-sptltoggl.btn-opn {
   background-color: #d35400 !important;
 }
 body.theme-pumpkin #cwos-sllinks li:hover {
@@ -3101,7 +3101,7 @@ body.theme-coffee #cwos-dnav li a:hover {
 body.theme-coffee #cwos-sltitle h3 {
   color: #45362E !important;
 }
-body.theme-coffee #cwos-sptltoggl:hover {
+body.theme-coffee #cwos-sptltoggl:hover, body.theme-coffee #cwos-sptltoggl.btn-opn {
   background-color: #45362E !important;
 }
 body.theme-coffee #cwos-sllinks li:hover {
@@ -3164,7 +3164,7 @@ body.theme-orange #cwos-dnav li a:hover {
 body.theme-orange #cwos-sltitle h3 {
   color: #FF9800 !important;
 }
-body.theme-orange #cwos-sptltoggl:hover {
+body.theme-orange #cwos-sptltoggl:hover, body.theme-orange #cwos-sptltoggl.btn-opn {
   background-color: #FF9800 !important;
 }
 body.theme-orange #cwos-sllinks li:hover {
@@ -3227,7 +3227,7 @@ body.theme-deep-orange #cwos-dnav li a:hover {
 body.theme-deep-orange #cwos-sltitle h3 {
   color: #FF5722 !important;
 }
-body.theme-deep-orange #cwos-sptltoggl:hover {
+body.theme-deep-orange #cwos-sptltoggl:hover, body.theme-deep-orange #cwos-sptltoggl.btn-opn {
   background-color: #FF5722 !important;
 }
 body.theme-deep-orange #cwos-sllinks li:hover {
@@ -3290,7 +3290,7 @@ body.theme-brown #cwos-dnav li a:hover {
 body.theme-brown #cwos-sltitle h3 {
   color: #795548 !important;
 }
-body.theme-brown #cwos-sptltoggl:hover {
+body.theme-brown #cwos-sptltoggl:hover, body.theme-brown #cwos-sptltoggl.btn-opn {
   background-color: #795548 !important;
 }
 body.theme-brown #cwos-sllinks li:hover {
@@ -3353,7 +3353,7 @@ body.theme-black #cwos-dnav li a:hover {
 body.theme-black #cwos-sltitle h3 {
   color: #000 !important;
 }
-body.theme-black #cwos-sptltoggl:hover {
+body.theme-black #cwos-sptltoggl:hover, body.theme-black #cwos-sptltoggl.btn-opn {
   background-color: #000 !important;
 }
 body.theme-black #cwos-sllinks li:hover {
@@ -3416,7 +3416,7 @@ body.theme-vimeo #cwos-dnav li a:hover {
 body.theme-vimeo #cwos-sltitle h3 {
   color: #1AB7EA !important;
 }
-body.theme-vimeo #cwos-sptltoggl:hover {
+body.theme-vimeo #cwos-sptltoggl:hover, body.theme-vimeo #cwos-sptltoggl.btn-opn {
   background-color: #1AB7EA !important;
 }
 body.theme-vimeo #cwos-sllinks li:hover {
@@ -3479,7 +3479,7 @@ body.theme-youtube #cwos-dnav li a:hover {
 body.theme-youtube #cwos-sltitle h3 {
   color: #DC4A38 !important;
 }
-body.theme-youtube #cwos-sptltoggl:hover {
+body.theme-youtube #cwos-sptltoggl:hover, body.theme-youtube #cwos-sptltoggl.btn-opn {
   background-color: #DC4A38 !important;
 }
 body.theme-youtube #cwos-sllinks li:hover {
@@ -3542,7 +3542,7 @@ body.theme-facebook #cwos-dnav li a:hover {
 body.theme-facebook #cwos-sltitle h3 {
   color: #3B5998 !important;
 }
-body.theme-facebook #cwos-sptltoggl:hover {
+body.theme-facebook #cwos-sptltoggl:hover, body.theme-facebook #cwos-sptltoggl.btn-opn {
   background-color: #3B5998 !important;
 }
 body.theme-facebook #cwos-sllinks li:hover {
@@ -3605,7 +3605,7 @@ body.theme-twitter #cwos-dnav li a:hover {
 body.theme-twitter #cwos-sltitle h3 {
   color: #28A9E0 !important;
 }
-body.theme-twitter #cwos-sptltoggl:hover {
+body.theme-twitter #cwos-sptltoggl:hover, body.theme-twitter #cwos-sptltoggl.btn-opn {
   background-color: #28A9E0 !important;
 }
 body.theme-twitter #cwos-sllinks li:hover {

@@ -69,7 +69,7 @@
         #cwos-sltitle h3{
           color: map.get($color, bg) !important;
         }
-        #cwos-sptltoggl:hover{
+        #cwos-sptltoggl:hover, #cwos-sptltoggl.btn-opn{
           background-color: map.get($color, bg) !important;
         }
         #cwos-sllinks li:hover {
