@@ -183,26 +183,26 @@ h1, h2, h3, h4, h5, h6, hgroup, .h-font, .heading-font, .header-font{
   width: 100%;
   overflow-x: auto;
 }
-.tagsinput{
-  border-width: 2px !important;
-  border-style: solid;
-  border-color: inherit;
-  margin: 0;
-  margin-top: 6px;
-  padding: 10px !important;
-  width: 100% !important;
-  & input{ border: none !important; }
-}
-.tagsinput .tag{
-  background-color: lighten($primary-color,28%) !important;
-  border-color: $primary-color !important;
-  font-size: 1em !important;
-  color: $text-color !important;
-  a{
-    color: darken(theme-color('red', bg),14%) !important;
-    font-size: 1.1em !important;
-  }
-}
+// .tagsinput{
+//   border-width: 2px !important;
+//   border-style: solid;
+//   border-color: inherit;
+//   margin: 0;
+//   margin-top: 6px;
+//   padding: 10px !important;
+//   width: 100% !important;
+//   & input{ border: none !important; }
+// }
+// .tagsinput .tag{
+//   background-color: lighten($primary-color,28%) !important;
+//   border-color: $primary-color !important;
+//   font-size: 1em !important;
+//   color: $text-color !important;
+//   a{
+//     color: darken(theme-color('red', bg),14%) !important;
+//     font-size: 1.1em !important;
+//   }
+// }
 .fancybox-slide{
   z-index: 700 !important;
 }
@@ -482,7 +482,46 @@ input.hidden{
           color: map.get($color, bg) !important;
         }
       }
-
+      // tags input
+      .tags-input-wrp{
+        border-style: solid;
+        border-width: 2px;
+        border-color: rgba(map.get($color, bg), 0.6) !important;
+        padding: 12px;
+        input[type=text],
+        input[type=email],
+        input[type=tel]{
+          border: none !important;
+          padding: 8px;
+        }
+        .bootstrap-tagsinput{
+          border: none;
+          background-color: transparent !important;
+          @include no-shadow();
+          input{ background-color: transparent !important;}
+          .label-info{
+            background-color: rgba(map.get($color, bg), 0.8) !important;
+            color: map.get($color, fg) !important;
+            padding: 5px 8px;
+            @include -br(3px);
+            display: inline-block;
+            margin-bottom: 6px;
+            span{
+              display: inline-block;
+              height: 24px; width: 20px;
+              background-color: darken(map.get($color, bg), 12%) !important;
+              padding: 0 !important;
+              padding-top: 0px !important;
+              @include -br(2px);
+              text-align: center;
+            }
+          }
+        }
+        .bootstrap-tagsinput.focus{
+          background-color: transparent !important;
+          @include no-shadow();
+        }
+      }
     }
   }
 }
