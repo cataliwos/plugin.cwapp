@@ -513,10 +513,11 @@ function getCookie(name) {
 	}
 	return null;
 }
-$.fn.scrollView = function () {
+$.fn.scrollView = function (wrp, paddn = 0) {
+  wrp = wrp ? wrp : "html, body";
   return this.each(function () {
-    $('html, body').animate({
-      scrollTop: $(this).offset().top
+    $(wrp).animate({
+      scrollTop: $(this).offset().top - paddn
     }, 1000);
   });
 };
