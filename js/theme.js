@@ -23,7 +23,7 @@ const opnActnBtn = () => {
     wrpr.animate({ width : wt }, 200, function() {
       wrpr.animate({height : ht}, 250, function() {
         wrpr.addClass("open");
-        wrpr.find("#actvt").addClass("open").html(` <i class="fad fa-times fa-lg"></i> Close`);
+        wrpr.find("#actvt").addClass("open").html(` <i class="fas fa-times fa-lg"></i> Close`);
       });
     });
   }
@@ -36,7 +36,7 @@ const clsActnBtn = () => {
     wrpr.animate({ height : ht }, 200, function() {
       wrpr.animate({ width : wt}, 250, function() {
         wrpr.removeClass("open");
-        wrpr.find("#actvt").removeClass("open").html(` <i class="fad fa-angle-right fa-lg"></i> Start`);
+        wrpr.find("#actvt").removeClass("open").html(` <i class="fas fa-angle-right fa-lg"></i> Start`);
       });
     });
 
