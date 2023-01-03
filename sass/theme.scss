@@ -1,7 +1,7 @@
 @use "sass:map";
 @use "sass:list";
 @use "sass:math";
-@import "../../../../var";
+@import "../../../../base-color";
 @import "./var";
 @import "./fn";
 @import "./font-face";
@@ -97,7 +97,7 @@ a.inherit{
   &:hover{
     border-bottom-style: dotted;
     border-bottom-width: 1px;
-    border-bottom-color: $primary-color;
+    border-bottom-color: $bg-color;
     opacity: 0.8;
   }
 }
@@ -162,10 +162,10 @@ h1, h2, h3, h4, h5, h6, hgroup, .h-font, .heading-font, .header-font{
     width: 180px;
     background-color: transparent;
     @include border-radius(32px);
-    border: solid 1px $primary-color;
-    color: $primary-color;
+    border: solid 1px $bg-color;
+    color: $bg-color;
     z-index: 20;
-    &:hover{ background-color: $primary-color; color: #ffffff; }
+    &:hover{ background-color: $bg-color; color: #ffffff; }
     &.open {
       border-color: theme-color('red', bg) !important;
       color: theme-color('red', bg) !important;
@@ -194,8 +194,8 @@ h1, h2, h3, h4, h5, h6, hgroup, .h-font, .heading-font, .header-font{
 //   & input{ border: none !important; }
 // }
 // .tagsinput .tag{
-//   background-color: lighten($primary-color,28%) !important;
-//   border-color: $primary-color !important;
+//   background-color: lighten($bg-color,28%) !important;
+//   border-color: $bg-color !important;
 //   font-size: 1em !important;
 //   color: $text-color !important;
 //   a{
@@ -1184,7 +1184,7 @@ table{
       // white-space: nowrap;
       color: theme-color('blue', bg);
       @include animate-all;
-      .fas{ font-size: 1.2em; }
+      .fas, .fad, .fal, .far{ font-size: 1em; }
       .stat-uploadn, .stat-done, .stat-failed{ display: none; }
       .stat-uploadn, .stat-done, .stat-failed, .stat-waitn, .fname, .ficon, .fsize{
         z-index: 2;
@@ -1255,7 +1255,7 @@ table{
           font-family: $fa-pro, $fa-free;
           @include border-radius(100%);
           background-color: theme-color('silver', bg);
-          font-size: 1.2em;
+          font-size: 1em;
         }
         &.unknown::before{
           content: '\f15b';
@@ -1307,7 +1307,7 @@ table{
       .frmv{
         position: absolute;
         right: 5px;
-        top: 10px;
+        top: 12px;
         padding: 5px;
         margin: 0 !important;
         display: none;

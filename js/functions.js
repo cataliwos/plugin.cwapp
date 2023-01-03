@@ -1,6 +1,126 @@
 if (typeof cwos == "undefined") {
   window.cwos = {}; // Catali Web OS
 } 
+window.fileExtToMimetype = {
+  'txt' : 'text/plain',
+  'htm' : 'text/html',
+  'html' : 'text/html',
+  'php' : 'text/html',
+  'css' : 'text/css',
+  'js' : 'application/javascript',
+  'json' : 'application/json',
+  'xml' : 'application/xml',
+  'swf' : 'application/x-shockwave-flash',
+  'flv' : 'video/x-flv',
+  'png' : 'image/png',
+  'jpg' : 'image/jpeg',
+  'jpeg' : 'image/jpeg',
+  'jpe' : 'image/jpeg',
+  'gif' : 'image/gif',
+  'bmp' : 'image/bmp',
+  'ico' : 'image/vnd.microsoft.icon',
+  'tiff' : 'image/tiff',
+  'tif' : 'image/tiff',
+  'svg' : 'image/svg+xml',
+  'svgz' : 'image/svg+xml',
+  'zip' : 'application/zip',
+  'rar' : 'application/x-rar-compressed',
+  'exe' : 'application/x-msdownload',
+  'msi' : 'application/x-msdownload',
+  'cab' : 'application/vnd.ms-cab-compressed',
+  'mp3' : 'audio/mpeg',
+  'qt' : 'video/quicktime',
+  'mov' : 'video/quicktime',
+  'mp4' : 'video/mpeg',
+  'pdf' : 'application/pdf',
+  'psd' : 'image/vnd.adobe.photoshop',
+  'ai' : 'application/postscript',
+  'eps' : 'application/postscript',
+  'ps' : 'application/postscript',
+  'doc' : 'application/msword',
+  'docx' : 'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
+  'rtf' : 'application/rtf',
+  'xls' : 'application/vnd.ms-excel',
+  'xlsx': 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
+  'ppt' : 'application/vnd.ms-powerpoint',
+  'pptx' : 'application/vnd.openxmlformats-officedocument.presentationml.presentation',
+  'odt' : 'application/vnd.oasis.opendocument.text',
+  'ods' : 'application/vnd.oasis.opendocument.spreadsheet'
+}
+window.fileExtension = function (mime) {
+  return inArray(mime, fileExtToMimetype)
+    ? array_key(mime, fileExtToMimetype)
+    : "unknown";
+}
+
+function fileGroup (mime) {
+  let groups = {
+    "image" 		: {
+        "png" : "image/png",
+        "jpg" : "image/jpeg",
+        "jpeg" : "image/jpeg",
+        "jpe" : "image/jpeg",
+        "gif" : "image/gif",
+        "bmp" : "image/bmp",
+        "ico" : "image/vnd.microsoft.icon",
+        "tiff" : "image/tiff",
+        "tif" : "image/tiff",
+        "svg" : "image/svg+xml",
+        "svgz" : "image/svg+xml"
+      },
+    "audio"			: {
+        "mp3" : "audio/mpeg",
+      },
+    "video"			: {
+        "qt" : "video/quicktime",
+        "mov" : "video/quicktime",
+        "mp4" : "video/mpeg",
+        "swf" : "application/x-shockwave-flash",
+        "flv" : "video/x-flv",
+      },
+    "script"			: {
+        "txt" : "text/plain",
+        "htm" : "text/html",
+        "html" : "text/html",
+        "php" : "text/html",
+        "css" : "text/css",
+        "js" : "application/javascript",
+        "json" : "application/json",
+        "xml" : "application/xml",
+      },
+    "archive"		: {
+        "zip" : "application/zip",
+        "rar" : "application/x-rar-compressed",
+        "7z"		: "application/x-7z-compressed",
+        "exe" : "application/x-msdownload",
+        "msi" : "application/x-msdownload",
+        "cab" : "application/vnd.ms-cab-compressed",
+      },
+    "document"		: {
+        "pdf" : "application/pdf",
+        "doc" : "application/msword",
+        "docx" : "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+        "rtf" : "application/rtf",
+        "xls" : "application/vnd.ms-excel",
+        "xlsx": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+        "ppt" : "application/vnd.ms-powerpoint",
+        "pptx" : "application/vnd.openxmlformats-officedocument.presentationml.presentation",
+        "odt" : "application/vnd.oasis.opendocument.text",
+        "ods" : "application/vnd.oasis.opendocument.spreadsheet"
+      },
+    "graphic"			: {
+      "psd" : "image/vnd.adobe.photoshop",
+      "ai" : "application/postscript",
+      "eps" : "application/postscript",
+      "ps" : "application/postscript"
+      }
+  };
+  let $return = "unknown";
+  $.each(groups, function (grp, obj) {
+    if ( mime in obj || inArray(mime, Object.values(obj))) $return = grp;
+  });
+  return $return;
+}
 cwos.fnLoaded = true;
 if (!window.location.origin) {
   window.location.origin = window.location.protocol;

@@ -240,6 +240,10 @@ cwos.form = {
       if (delete cwos.form.files[fid]) {
         $(document).find(`li#${fid}`).remove();
         delete cwos.form.fileHash[fid];
+        if (objectLength(cwos.form.files) < 1) {
+          $("#upload-trigger").show();
+          $("#upload-submit-btn").hide();
+        }
       }
     }
   },
@@ -400,10 +404,10 @@ cwos.form.initFile = function (fileInput, statBar) {
     $.each(fileProps, function(i, file) {
       fileExt = file.name.substr(file.name.lastIndexOf('.') + 1);
       // fileIcon = file_group(file.type);
-      fileIcon = file_group(fileExt.toLowerCase());
-      fileSize = byte_size(file.size);
+      fileIcon = fileGroup(fileExt.toLowerCase());
+      fileSize = byteSize(file.size);
       fileSize = typeof fileSize[0] == "number"
-        ? number_format(fileSize[0],2,".",",") + fileSize[1]
+        ? numberFormat(fileSize[0],2,".",",") + fileSize[1]
         : "0.0";
       prgLi = $(`<li id="${file.id}"> <span class="ficon ${fileIcon}"></span>  <span class="fname">${file.name}</span> <span class="fsize">${fileSize}</span></li>`);
       prgLi.append($(`<div class=\"prgs\" id="cwos-upl-prog-${file.id}"></div>`))

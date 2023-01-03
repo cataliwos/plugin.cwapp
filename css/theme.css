@@ -10670,8 +10670,8 @@ table.horizontal tr th, table.horizontal tr td {
   -o-transition: all 0.2s ease-in;
   transition: all 0.2s ease-in;
 }
-#cwos-frm-upldr-stat ul.fl-lst li .fas {
-  font-size: 1.2em;
+#cwos-frm-upldr-stat ul.fl-lst li .fas, #cwos-frm-upldr-stat ul.fl-lst li .fad, #cwos-frm-upldr-stat ul.fl-lst li .fal, #cwos-frm-upldr-stat ul.fl-lst li .far {
+  font-size: 1em;
 }
 #cwos-frm-upldr-stat ul.fl-lst li .stat-uploadn, #cwos-frm-upldr-stat ul.fl-lst li .stat-done, #cwos-frm-upldr-stat ul.fl-lst li .stat-failed {
   display: none;
@@ -10771,7 +10771,7 @@ table.horizontal tr th, table.horizontal tr td {
   -moz-border-radius: 100%;
   border-radius: 100%;
   background-color: #bdc3c7;
-  font-size: 1.2em;
+  font-size: 1em;
 }
 #cwos-frm-upldr-stat ul.fl-lst li .ficon.unknown::before {
   content: "\f15b";
@@ -10825,7 +10825,7 @@ table.horizontal tr th, table.horizontal tr td {
 #cwos-frm-upldr-stat ul.fl-lst li .frmv {
   position: absolute;
   right: 5px;
-  top: 10px;
+  top: 12px;
   padding: 5px;
   margin: 0 !important;
   display: none;
