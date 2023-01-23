@@ -101,7 +101,7 @@ cwos.setup = function () {
     if ($(this).val().length > 0 || $(this).is(':checked')) {
       if(label.length > 0){ label.addClass('shrink');}
     }else{
-      if(label.length > 0 && !in_array($(this).attr('type'),["date","datetime"])){ label.removeClass('shrink');}
+      if(label.length > 0 && !inArray($(this).attr('type'),["date","datetime"])){ label.removeClass('shrink');}
     }
   });
   $(document).on('blur change','input, textarea, select',function(){

@@ -150,6 +150,16 @@ const replace_all = String.prototype.replaceAll;
 String.prototype.ucfirst = function(rest_lower) {
   return this.charAt(0).toUpperCase() + (rest_lower == true ? this.slice(1).toLowerCase() : this.slice(1))
 }
+const isSet = (needle = "", haystack = false) => {
+  if (needle) {
+    if (haystack && (typeof window[haystack] == "object" || typeof window.haystack == "object" || typeof haystack == "object")) {
+      return needle in haystack && (haystack[needle].length > 0 || haystack[needle] !== "");
+    } else {
+      return (typeof window[needle] !== "undefined" && (window[needle].length >0 || window[needle] !== "") );
+    }
+  }
+  return false;
+}
 const isLocalhost = () => {
   let address = window.location.href.split('/')[2];
   let ip_regex = /^(\d|[1-9]\d|1\d\d|2([0-4]\d|5[0-5]))\.(\d|[1-9]\d|1\d\d|2([0-4]\d|5[0-5]))\.(\d|[1-9]\d|1\d\d|2([0-4]\d|5[0-5]))\.(\d|[1-9]\d|1\d\d|2([0-4]\d|5[0-5]))$/;

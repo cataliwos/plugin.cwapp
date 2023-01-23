@@ -1684,6 +1684,132 @@ body.theme-native .cwos-sidenav li.cwos-curnav {
   border-left-color: #1976D2 !important;
 }
 
+body.theme-native-purple a {
+  outline: none;
+  border: none;
+  text-decoration: none;
+  -webkit-transition: all 0.2s ease-in;
+  -moz-transition: all 0.2s ease-in;
+  -ms-transition: all 0.2s ease-in;
+  -o-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
+  color: #9c27b0;
+}
+body.theme-native-purple a:focus {
+  outline: none;
+}
+body.theme-native-purple a:visited {
+  color: #7e208f;
+  outline: none;
+}
+body.theme-native-purple a:hover {
+  color: #4e1458;
+}
+body.theme-native-purple #cwos-header {
+  background-color: #9c27b0 !important;
+  color: #ffffff !important;
+}
+body.theme-native-purple #cwos-navbar-toggle:hover,
+body.theme-native-purple #cwos-sidebar-toggle:hover,
+body.theme-native-purple #cwos-navbar-toggle.active,
+body.theme-native-purple #cwos-sidebar-toggle.active {
+  color: #9c27b0 !important;
+}
+body.theme-native-purple #cwos-dnav {
+  color: #9c27b0 !important;
+}
+body.theme-native-purple #cwos-dnav .cwos-dnav-current a {
+  border-top-color: #9c27b0 !important;
+}
+body.theme-native-purple #cwos-dnav li a {
+  color: #9c27b0 !important;
+}
+body.theme-native-purple #cwos-dnav li a:hover {
+  color: #ffffff !important;
+  background-color: #9c27b0 !important;
+}
+body.theme-native-purple #cwos-sltitle h3 {
+  color: #9c27b0 !important;
+}
+body.theme-native-purple #cwos-sptltoggl:hover, body.theme-native-purple #cwos-sptltoggl.btn-opn {
+  background-color: #9c27b0 !important;
+}
+body.theme-native-purple #cwos-sllinks li:hover {
+  color: #9c27b0 !important;
+}
+body.theme-native-purple .cwos-sidenav li::after {
+  background-color: #9c27b0 !important;
+}
+body.theme-native-purple .cwos-sidenav li:hover {
+  color: #9c27b0 !important;
+}
+body.theme-native-purple .cwos-sidenav li.cwos-curnav {
+  border-left-color: #9c27b0 !important;
+}
+
+body.theme-native-amber a {
+  outline: none;
+  border: none;
+  text-decoration: none;
+  -webkit-transition: all 0.2s ease-in;
+  -moz-transition: all 0.2s ease-in;
+  -ms-transition: all 0.2s ease-in;
+  -o-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
+  color: #FFB700;
+}
+body.theme-native-amber a:focus {
+  outline: none;
+}
+body.theme-native-amber a:visited {
+  color: #d69a00;
+  outline: none;
+}
+body.theme-native-amber a:hover {
+  color: #946a00;
+}
+body.theme-native-amber #cwos-header {
+  background-color: #FFB700 !important;
+  color: #000 !important;
+}
+body.theme-native-amber #cwos-navbar-toggle:hover,
+body.theme-native-amber #cwos-sidebar-toggle:hover,
+body.theme-native-amber #cwos-navbar-toggle.active,
+body.theme-native-amber #cwos-sidebar-toggle.active {
+  color: #FFB700 !important;
+}
+body.theme-native-amber #cwos-dnav {
+  color: #FFB700 !important;
+}
+body.theme-native-amber #cwos-dnav .cwos-dnav-current a {
+  border-top-color: #FFB700 !important;
+}
+body.theme-native-amber #cwos-dnav li a {
+  color: #FFB700 !important;
+}
+body.theme-native-amber #cwos-dnav li a:hover {
+  color: #000 !important;
+  background-color: #FFB700 !important;
+}
+body.theme-native-amber #cwos-sltitle h3 {
+  color: #FFB700 !important;
+}
+body.theme-native-amber #cwos-sptltoggl:hover, body.theme-native-amber #cwos-sptltoggl.btn-opn {
+  background-color: #FFB700 !important;
+}
+body.theme-native-amber #cwos-sllinks li:hover {
+  color: #FFB700 !important;
+}
+body.theme-native-amber .cwos-sidenav li::after {
+  background-color: #FFB700 !important;
+}
+body.theme-native-amber .cwos-sidenav li:hover {
+  color: #FFB700 !important;
+}
+body.theme-native-amber .cwos-sidenav li.cwos-curnav {
+  border-left-color: #FFB700 !important;
+}
+
 body.theme-gold a {
   outline: none;
   border: none;
@@ -3887,6 +4013,44 @@ blockquote p {
   background-color: #115292 !important;
 }
 
+.theme-btn.native-purple,
+.theme-button.native-purple,
+.cwos-btn.native-purple,
+.cwos-button.native-purple {
+  color: #ffffff !important;
+  background-color: #9c27b0;
+  -webkit-transition: background 0.2s ease-in;
+  -moz-transition: background 0.2s ease-in;
+  -ms-transition: background 0.2s ease-in;
+  -o-transition: background 0.2s ease-in;
+  transition: background 0.2s ease-in;
+}
+.theme-btn.native-purple:hover,
+.theme-button.native-purple:hover,
+.cwos-btn.native-purple:hover,
+.cwos-button.native-purple:hover {
+  background-color: #681a76 !important;
+}
+
+.theme-btn.native-amber,
+.theme-button.native-amber,
+.cwos-btn.native-amber,
+.cwos-button.native-amber {
+  color: #000 !important;
+  background-color: #FFB700;
+  -webkit-transition: background 0.2s ease-in;
+  -moz-transition: background 0.2s ease-in;
+  -ms-transition: background 0.2s ease-in;
+  -o-transition: background 0.2s ease-in;
+  transition: background 0.2s ease-in;
+}
+.theme-btn.native-amber:hover,
+.theme-button.native-amber:hover,
+.cwos-btn.native-amber:hover,
+.cwos-button.native-amber:hover {
+  background-color: #b88400 !important;
+}
+
 .theme-btn.gold,
 .theme-button.gold,
 .cwos-btn.gold,
@@ -4644,6 +4808,14 @@ input.hidden {
   background-color: #1976D2 !important;
 }
 
+.bg-native-purple {
+  background-color: #9c27b0 !important;
+}
+
+.bg-native-amber {
+  background-color: #FFB700 !important;
+}
+
 .bg-gold {
   background-color: #EBBD63 !important;
 }
@@ -4868,6 +5040,194 @@ input.hidden {
   text-align: center;
 }
 .theme-color.native .tags-input-wrp .bootstrap-tagsinput.focus {
+  background-color: transparent !important;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+}
+
+.theme-color.native-purple {
+  border-color: #9c27b0 !important;
+}
+.theme-color.native-purple.color-text, .theme-color.native-purple .color-text {
+  color: #9c27b0 !important;
+}
+.theme-color.native-purple.color-bg, .theme-color.native-purple .color-bg, .theme-color.native-purple.color-bg label, .theme-color.native-purple .color-bg label {
+  color: #ffffff !important;
+  border-color: #7e208f !important;
+  background-color: #9c27b0 !important;
+}
+.theme-color.native-purple.no-bgc, .theme-color.native-purple .no-bgc {
+  background-color: transparent !important;
+}
+.theme-color.native-purple div, .theme-color.native-purple p, .theme-color.native-purple h1, .theme-color.native-purple h3, .theme-color.native-purple h4, .theme-color.native-purple h5, .theme-color.native-purple h6, .theme-color.native-purple article, .theme-color.native-purple section, .theme-color.native-purple table, .theme-color.native-purple tr, .theme-color.native-purple th, .theme-color.native-purple thead, .theme-color.native-purple tbody, .theme-color.native-purple td, .theme-color.native-purple header, .theme-color.native-purple nav, .theme-color.native-purple aside, .theme-color.native-purple footer, .theme-color.native-purple ul, .theme-color.native-purple ol, .theme-color.native-purple li, .theme-color.native-purple button {
+  border-color: #9c27b0;
+}
+.theme-color.native-purple div.color-bg, .theme-color.native-purple div .color-bg, .theme-color.native-purple p.color-bg, .theme-color.native-purple p .color-bg, .theme-color.native-purple h1.color-bg, .theme-color.native-purple h1 .color-bg, .theme-color.native-purple h3.color-bg, .theme-color.native-purple h3 .color-bg, .theme-color.native-purple h4.color-bg, .theme-color.native-purple h4 .color-bg, .theme-color.native-purple h5.color-bg, .theme-color.native-purple h5 .color-bg, .theme-color.native-purple h6.color-bg, .theme-color.native-purple h6 .color-bg, .theme-color.native-purple article.color-bg, .theme-color.native-purple article .color-bg, .theme-color.native-purple section.color-bg, .theme-color.native-purple section .color-bg, .theme-color.native-purple table.color-bg, .theme-color.native-purple table .color-bg, .theme-color.native-purple tr.color-bg, .theme-color.native-purple tr .color-bg, .theme-color.native-purple th.color-bg, .theme-color.native-purple th .color-bg, .theme-color.native-purple thead.color-bg, .theme-color.native-purple thead .color-bg, .theme-color.native-purple tbody.color-bg, .theme-color.native-purple tbody .color-bg, .theme-color.native-purple td.color-bg, .theme-color.native-purple td .color-bg, .theme-color.native-purple header.color-bg, .theme-color.native-purple header .color-bg, .theme-color.native-purple nav.color-bg, .theme-color.native-purple nav .color-bg, .theme-color.native-purple aside.color-bg, .theme-color.native-purple aside .color-bg, .theme-color.native-purple footer.color-bg, .theme-color.native-purple footer .color-bg, .theme-color.native-purple ul.color-bg, .theme-color.native-purple ul .color-bg, .theme-color.native-purple ol.color-bg, .theme-color.native-purple ol .color-bg, .theme-color.native-purple li.color-bg, .theme-color.native-purple li .color-bg, .theme-color.native-purple button.color-bg, .theme-color.native-purple button .color-bg {
+  border-color: #7e208f !important;
+}
+.theme-color.native-purple input, .theme-color.native-purple select, .theme-color.native-purple button, .theme-color.native-purple textarea {
+  border-color: #cd69de !important;
+}
+.theme-color.native-purple input:focus, .theme-color.native-purple input:valid, .theme-color.native-purple input.has-val, .theme-color.native-purple select:focus, .theme-color.native-purple select:valid, .theme-color.native-purple select.has-val, .theme-color.native-purple button:focus, .theme-color.native-purple button:valid, .theme-color.native-purple button.has-val, .theme-color.native-purple textarea:focus, .theme-color.native-purple textarea:valid, .theme-color.native-purple textarea.has-val {
+  border-color: #9c27b0 !important;
+}
+.theme-color.native-purple.color-bg textarea:valid, .theme-color.native-purple.color-bg textarea:focus, .theme-color.native-purple.color-bg textarea.has-val, .theme-color.native-purple.color-bg input[type=color]:valid, .theme-color.native-purple.color-bg input[type=color]:focus, .theme-color.native-purple.color-bg input[type=color].has-val, .theme-color.native-purple.color-bg input[type=date]:valid, .theme-color.native-purple.color-bg input[type=date]:focus, .theme-color.native-purple.color-bg input[type=date].has-val, .theme-color.native-purple.color-bg input[type=datetime]:valid, .theme-color.native-purple.color-bg input[type=datetime]:focus, .theme-color.native-purple.color-bg input[type=datetime].has-val, .theme-color.native-purple.color-bg input[type=datetime-local]:valid, .theme-color.native-purple.color-bg input[type=datetime-local]:focus, .theme-color.native-purple.color-bg input[type=datetime-local].has-val, .theme-color.native-purple.color-bg input[type=email]:valid, .theme-color.native-purple.color-bg input[type=email]:focus, .theme-color.native-purple.color-bg input[type=email].has-val, .theme-color.native-purple.color-bg input[type=month]:valid, .theme-color.native-purple.color-bg input[type=month]:focus, .theme-color.native-purple.color-bg input[type=month].has-val, .theme-color.native-purple.color-bg input[type=number]:valid, .theme-color.native-purple.color-bg input[type=number]:focus, .theme-color.native-purple.color-bg input[type=number].has-val, .theme-color.native-purple.color-bg input[type=password]:valid, .theme-color.native-purple.color-bg input[type=password]:focus, .theme-color.native-purple.color-bg input[type=password].has-val, .theme-color.native-purple.color-bg input[type=range]:valid, .theme-color.native-purple.color-bg input[type=range]:focus, .theme-color.native-purple.color-bg input[type=range].has-val, .theme-color.native-purple.color-bg input[type=search]:valid, .theme-color.native-purple.color-bg input[type=search]:focus, .theme-color.native-purple.color-bg input[type=search].has-val, .theme-color.native-purple.color-bg input[type=submit]:valid, .theme-color.native-purple.color-bg input[type=submit]:focus, .theme-color.native-purple.color-bg input[type=submit].has-val, .theme-color.native-purple.color-bg input[type=tel]:valid, .theme-color.native-purple.color-bg input[type=tel]:focus, .theme-color.native-purple.color-bg input[type=tel].has-val, .theme-color.native-purple.color-bg input[type=text]:valid, .theme-color.native-purple.color-bg input[type=text]:focus, .theme-color.native-purple.color-bg input[type=text].has-val, .theme-color.native-purple.color-bg input[type=time]:valid, .theme-color.native-purple.color-bg input[type=time]:focus, .theme-color.native-purple.color-bg input[type=time].has-val, .theme-color.native-purple.color-bg input[type=url]:valid, .theme-color.native-purple.color-bg input[type=url]:focus, .theme-color.native-purple.color-bg input[type=url].has-val, .theme-color.native-purple.color-bg input[type=week]:valid, .theme-color.native-purple.color-bg input[type=week]:focus, .theme-color.native-purple.color-bg input[type=week].has-val, .theme-color.native-purple .color-bg textarea:valid, .theme-color.native-purple .color-bg textarea:focus, .theme-color.native-purple .color-bg textarea.has-val, .theme-color.native-purple .color-bg input[type=color]:valid, .theme-color.native-purple .color-bg input[type=color]:focus, .theme-color.native-purple .color-bg input[type=color].has-val, .theme-color.native-purple .color-bg input[type=date]:valid, .theme-color.native-purple .color-bg input[type=date]:focus, .theme-color.native-purple .color-bg input[type=date].has-val, .theme-color.native-purple .color-bg input[type=datetime]:valid, .theme-color.native-purple .color-bg input[type=datetime]:focus, .theme-color.native-purple .color-bg input[type=datetime].has-val, .theme-color.native-purple .color-bg input[type=datetime-local]:valid, .theme-color.native-purple .color-bg input[type=datetime-local]:focus, .theme-color.native-purple .color-bg input[type=datetime-local].has-val, .theme-color.native-purple .color-bg input[type=email]:valid, .theme-color.native-purple .color-bg input[type=email]:focus, .theme-color.native-purple .color-bg input[type=email].has-val, .theme-color.native-purple .color-bg input[type=month]:valid, .theme-color.native-purple .color-bg input[type=month]:focus, .theme-color.native-purple .color-bg input[type=month].has-val, .theme-color.native-purple .color-bg input[type=number]:valid, .theme-color.native-purple .color-bg input[type=number]:focus, .theme-color.native-purple .color-bg input[type=number].has-val, .theme-color.native-purple .color-bg input[type=password]:valid, .theme-color.native-purple .color-bg input[type=password]:focus, .theme-color.native-purple .color-bg input[type=password].has-val, .theme-color.native-purple .color-bg input[type=range]:valid, .theme-color.native-purple .color-bg input[type=range]:focus, .theme-color.native-purple .color-bg input[type=range].has-val, .theme-color.native-purple .color-bg input[type=search]:valid, .theme-color.native-purple .color-bg input[type=search]:focus, .theme-color.native-purple .color-bg input[type=search].has-val, .theme-color.native-purple .color-bg input[type=submit]:valid, .theme-color.native-purple .color-bg input[type=submit]:focus, .theme-color.native-purple .color-bg input[type=submit].has-val, .theme-color.native-purple .color-bg input[type=tel]:valid, .theme-color.native-purple .color-bg input[type=tel]:focus, .theme-color.native-purple .color-bg input[type=tel].has-val, .theme-color.native-purple .color-bg input[type=text]:valid, .theme-color.native-purple .color-bg input[type=text]:focus, .theme-color.native-purple .color-bg input[type=text].has-val, .theme-color.native-purple .color-bg input[type=time]:valid, .theme-color.native-purple .color-bg input[type=time]:focus, .theme-color.native-purple .color-bg input[type=time].has-val, .theme-color.native-purple .color-bg input[type=url]:valid, .theme-color.native-purple .color-bg input[type=url]:focus, .theme-color.native-purple .color-bg input[type=url].has-val, .theme-color.native-purple .color-bg input[type=week]:valid, .theme-color.native-purple .color-bg input[type=week]:focus, .theme-color.native-purple .color-bg input[type=week].has-val {
+  border-color: #681a76 !important;
+}
+.theme-color.native-purple.color-bg button, .theme-color.native-purple.color-bg input[type=button], .theme-color.native-purple.color-bg input[type=reset], .theme-color.native-purple .color-bg button, .theme-color.native-purple .color-bg input[type=button], .theme-color.native-purple .color-bg input[type=reset] {
+  border: solid 2px #c248d6 !important;
+}
+.theme-color.native-purple.color-bg button:focus, .theme-color.native-purple.color-bg input[type=button]:focus, .theme-color.native-purple.color-bg input[type=reset]:focus, .theme-color.native-purple .color-bg button:focus, .theme-color.native-purple .color-bg input[type=button]:focus, .theme-color.native-purple .color-bg input[type=reset]:focus {
+  border: solid 2px #681a76 !important;
+}
+.theme-color.native-purple input[type=checkbox]:checked + label,
+.theme-color.native-purple input[type=radio]:checked + label,
+.theme-color.native-purple input[type=checkbox]:checked + label::before,
+.theme-color.native-purple input[type=radio]:checked + label::before {
+  color: #9c27b0 !important;
+}
+.theme-color.native-purple .tags-input-wrp {
+  border-style: solid;
+  border-width: 2px;
+  border-color: rgba(156, 39, 176, 0.6) !important;
+  padding: 12px;
+}
+.theme-color.native-purple .tags-input-wrp input[type=text],
+.theme-color.native-purple .tags-input-wrp input[type=email],
+.theme-color.native-purple .tags-input-wrp input[type=tel] {
+  border: none !important;
+  padding: 8px;
+}
+.theme-color.native-purple .tags-input-wrp .bootstrap-tagsinput {
+  border: none;
+  background-color: transparent !important;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+}
+.theme-color.native-purple .tags-input-wrp .bootstrap-tagsinput input {
+  background-color: transparent !important;
+}
+.theme-color.native-purple .tags-input-wrp .bootstrap-tagsinput .label-info {
+  background-color: rgba(156, 39, 176, 0.8) !important;
+  color: #ffffff !important;
+  padding: 5px 8px;
+  -webkit-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  display: inline-block;
+  margin-bottom: 6px;
+}
+.theme-color.native-purple .tags-input-wrp .bootstrap-tagsinput .label-info span {
+  display: inline-block;
+  height: 24px;
+  width: 20px;
+  background-color: #701c7e !important;
+  padding: 0 !important;
+  padding-top: 0px !important;
+  -webkit-border-radius: 2px;
+  -ms-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+  text-align: center;
+}
+.theme-color.native-purple .tags-input-wrp .bootstrap-tagsinput.focus {
+  background-color: transparent !important;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+}
+
+.theme-color.native-amber {
+  border-color: #FFB700 !important;
+}
+.theme-color.native-amber.color-text, .theme-color.native-amber .color-text {
+  color: #FFB700 !important;
+}
+.theme-color.native-amber.color-bg, .theme-color.native-amber .color-bg, .theme-color.native-amber.color-bg label, .theme-color.native-amber .color-bg label {
+  color: #000 !important;
+  border-color: #d69a00 !important;
+  background-color: #FFB700 !important;
+}
+.theme-color.native-amber.no-bgc, .theme-color.native-amber .no-bgc {
+  background-color: transparent !important;
+}
+.theme-color.native-amber div, .theme-color.native-amber p, .theme-color.native-amber h1, .theme-color.native-amber h3, .theme-color.native-amber h4, .theme-color.native-amber h5, .theme-color.native-amber h6, .theme-color.native-amber article, .theme-color.native-amber section, .theme-color.native-amber table, .theme-color.native-amber tr, .theme-color.native-amber th, .theme-color.native-amber thead, .theme-color.native-amber tbody, .theme-color.native-amber td, .theme-color.native-amber header, .theme-color.native-amber nav, .theme-color.native-amber aside, .theme-color.native-amber footer, .theme-color.native-amber ul, .theme-color.native-amber ol, .theme-color.native-amber li, .theme-color.native-amber button {
+  border-color: #FFB700;
+}
+.theme-color.native-amber div.color-bg, .theme-color.native-amber div .color-bg, .theme-color.native-amber p.color-bg, .theme-color.native-amber p .color-bg, .theme-color.native-amber h1.color-bg, .theme-color.native-amber h1 .color-bg, .theme-color.native-amber h3.color-bg, .theme-color.native-amber h3 .color-bg, .theme-color.native-amber h4.color-bg, .theme-color.native-amber h4 .color-bg, .theme-color.native-amber h5.color-bg, .theme-color.native-amber h5 .color-bg, .theme-color.native-amber h6.color-bg, .theme-color.native-amber h6 .color-bg, .theme-color.native-amber article.color-bg, .theme-color.native-amber article .color-bg, .theme-color.native-amber section.color-bg, .theme-color.native-amber section .color-bg, .theme-color.native-amber table.color-bg, .theme-color.native-amber table .color-bg, .theme-color.native-amber tr.color-bg, .theme-color.native-amber tr .color-bg, .theme-color.native-amber th.color-bg, .theme-color.native-amber th .color-bg, .theme-color.native-amber thead.color-bg, .theme-color.native-amber thead .color-bg, .theme-color.native-amber tbody.color-bg, .theme-color.native-amber tbody .color-bg, .theme-color.native-amber td.color-bg, .theme-color.native-amber td .color-bg, .theme-color.native-amber header.color-bg, .theme-color.native-amber header .color-bg, .theme-color.native-amber nav.color-bg, .theme-color.native-amber nav .color-bg, .theme-color.native-amber aside.color-bg, .theme-color.native-amber aside .color-bg, .theme-color.native-amber footer.color-bg, .theme-color.native-amber footer .color-bg, .theme-color.native-amber ul.color-bg, .theme-color.native-amber ul .color-bg, .theme-color.native-amber ol.color-bg, .theme-color.native-amber ol .color-bg, .theme-color.native-amber li.color-bg, .theme-color.native-amber li .color-bg, .theme-color.native-amber button.color-bg, .theme-color.native-amber button .color-bg {
+  border-color: #d69a00 !important;
+}
+.theme-color.native-amber input, .theme-color.native-amber select, .theme-color.native-amber button, .theme-color.native-amber textarea {
+  border-color: #ffd770 !important;
+}
+.theme-color.native-amber input:focus, .theme-color.native-amber input:valid, .theme-color.native-amber input.has-val, .theme-color.native-amber select:focus, .theme-color.native-amber select:valid, .theme-color.native-amber select.has-val, .theme-color.native-amber button:focus, .theme-color.native-amber button:valid, .theme-color.native-amber button.has-val, .theme-color.native-amber textarea:focus, .theme-color.native-amber textarea:valid, .theme-color.native-amber textarea.has-val {
+  border-color: #FFB700 !important;
+}
+.theme-color.native-amber.color-bg textarea:valid, .theme-color.native-amber.color-bg textarea:focus, .theme-color.native-amber.color-bg textarea.has-val, .theme-color.native-amber.color-bg input[type=color]:valid, .theme-color.native-amber.color-bg input[type=color]:focus, .theme-color.native-amber.color-bg input[type=color].has-val, .theme-color.native-amber.color-bg input[type=date]:valid, .theme-color.native-amber.color-bg input[type=date]:focus, .theme-color.native-amber.color-bg input[type=date].has-val, .theme-color.native-amber.color-bg input[type=datetime]:valid, .theme-color.native-amber.color-bg input[type=datetime]:focus, .theme-color.native-amber.color-bg input[type=datetime].has-val, .theme-color.native-amber.color-bg input[type=datetime-local]:valid, .theme-color.native-amber.color-bg input[type=datetime-local]:focus, .theme-color.native-amber.color-bg input[type=datetime-local].has-val, .theme-color.native-amber.color-bg input[type=email]:valid, .theme-color.native-amber.color-bg input[type=email]:focus, .theme-color.native-amber.color-bg input[type=email].has-val, .theme-color.native-amber.color-bg input[type=month]:valid, .theme-color.native-amber.color-bg input[type=month]:focus, .theme-color.native-amber.color-bg input[type=month].has-val, .theme-color.native-amber.color-bg input[type=number]:valid, .theme-color.native-amber.color-bg input[type=number]:focus, .theme-color.native-amber.color-bg input[type=number].has-val, .theme-color.native-amber.color-bg input[type=password]:valid, .theme-color.native-amber.color-bg input[type=password]:focus, .theme-color.native-amber.color-bg input[type=password].has-val, .theme-color.native-amber.color-bg input[type=range]:valid, .theme-color.native-amber.color-bg input[type=range]:focus, .theme-color.native-amber.color-bg input[type=range].has-val, .theme-color.native-amber.color-bg input[type=search]:valid, .theme-color.native-amber.color-bg input[type=search]:focus, .theme-color.native-amber.color-bg input[type=search].has-val, .theme-color.native-amber.color-bg input[type=submit]:valid, .theme-color.native-amber.color-bg input[type=submit]:focus, .theme-color.native-amber.color-bg input[type=submit].has-val, .theme-color.native-amber.color-bg input[type=tel]:valid, .theme-color.native-amber.color-bg input[type=tel]:focus, .theme-color.native-amber.color-bg input[type=tel].has-val, .theme-color.native-amber.color-bg input[type=text]:valid, .theme-color.native-amber.color-bg input[type=text]:focus, .theme-color.native-amber.color-bg input[type=text].has-val, .theme-color.native-amber.color-bg input[type=time]:valid, .theme-color.native-amber.color-bg input[type=time]:focus, .theme-color.native-amber.color-bg input[type=time].has-val, .theme-color.native-amber.color-bg input[type=url]:valid, .theme-color.native-amber.color-bg input[type=url]:focus, .theme-color.native-amber.color-bg input[type=url].has-val, .theme-color.native-amber.color-bg input[type=week]:valid, .theme-color.native-amber.color-bg input[type=week]:focus, .theme-color.native-amber.color-bg input[type=week].has-val, .theme-color.native-amber .color-bg textarea:valid, .theme-color.native-amber .color-bg textarea:focus, .theme-color.native-amber .color-bg textarea.has-val, .theme-color.native-amber .color-bg input[type=color]:valid, .theme-color.native-amber .color-bg input[type=color]:focus, .theme-color.native-amber .color-bg input[type=color].has-val, .theme-color.native-amber .color-bg input[type=date]:valid, .theme-color.native-amber .color-bg input[type=date]:focus, .theme-color.native-amber .color-bg input[type=date].has-val, .theme-color.native-amber .color-bg input[type=datetime]:valid, .theme-color.native-amber .color-bg input[type=datetime]:focus, .theme-color.native-amber .color-bg input[type=datetime].has-val, .theme-color.native-amber .color-bg input[type=datetime-local]:valid, .theme-color.native-amber .color-bg input[type=datetime-local]:focus, .theme-color.native-amber .color-bg input[type=datetime-local].has-val, .theme-color.native-amber .color-bg input[type=email]:valid, .theme-color.native-amber .color-bg input[type=email]:focus, .theme-color.native-amber .color-bg input[type=email].has-val, .theme-color.native-amber .color-bg input[type=month]:valid, .theme-color.native-amber .color-bg input[type=month]:focus, .theme-color.native-amber .color-bg input[type=month].has-val, .theme-color.native-amber .color-bg input[type=number]:valid, .theme-color.native-amber .color-bg input[type=number]:focus, .theme-color.native-amber .color-bg input[type=number].has-val, .theme-color.native-amber .color-bg input[type=password]:valid, .theme-color.native-amber .color-bg input[type=password]:focus, .theme-color.native-amber .color-bg input[type=password].has-val, .theme-color.native-amber .color-bg input[type=range]:valid, .theme-color.native-amber .color-bg input[type=range]:focus, .theme-color.native-amber .color-bg input[type=range].has-val, .theme-color.native-amber .color-bg input[type=search]:valid, .theme-color.native-amber .color-bg input[type=search]:focus, .theme-color.native-amber .color-bg input[type=search].has-val, .theme-color.native-amber .color-bg input[type=submit]:valid, .theme-color.native-amber .color-bg input[type=submit]:focus, .theme-color.native-amber .color-bg input[type=submit].has-val, .theme-color.native-amber .color-bg input[type=tel]:valid, .theme-color.native-amber .color-bg input[type=tel]:focus, .theme-color.native-amber .color-bg input[type=tel].has-val, .theme-color.native-amber .color-bg input[type=text]:valid, .theme-color.native-amber .color-bg input[type=text]:focus, .theme-color.native-amber .color-bg input[type=text].has-val, .theme-color.native-amber .color-bg input[type=time]:valid, .theme-color.native-amber .color-bg input[type=time]:focus, .theme-color.native-amber .color-bg input[type=time].has-val, .theme-color.native-amber .color-bg input[type=url]:valid, .theme-color.native-amber .color-bg input[type=url]:focus, .theme-color.native-amber .color-bg input[type=url].has-val, .theme-color.native-amber .color-bg input[type=week]:valid, .theme-color.native-amber .color-bg input[type=week]:focus, .theme-color.native-amber .color-bg input[type=week].has-val {
+  border-color: #b88400 !important;
+}
+.theme-color.native-amber.color-bg button, .theme-color.native-amber.color-bg input[type=button], .theme-color.native-amber.color-bg input[type=reset], .theme-color.native-amber .color-bg button, .theme-color.native-amber .color-bg input[type=button], .theme-color.native-amber .color-bg input[type=reset] {
+  border: solid 2px #ffcb47 !important;
+}
+.theme-color.native-amber.color-bg button:focus, .theme-color.native-amber.color-bg input[type=button]:focus, .theme-color.native-amber.color-bg input[type=reset]:focus, .theme-color.native-amber .color-bg button:focus, .theme-color.native-amber .color-bg input[type=button]:focus, .theme-color.native-amber .color-bg input[type=reset]:focus {
+  border: solid 2px #b88400 !important;
+}
+.theme-color.native-amber input[type=checkbox]:checked + label,
+.theme-color.native-amber input[type=radio]:checked + label,
+.theme-color.native-amber input[type=checkbox]:checked + label::before,
+.theme-color.native-amber input[type=radio]:checked + label::before {
+  color: #FFB700 !important;
+}
+.theme-color.native-amber .tags-input-wrp {
+  border-style: solid;
+  border-width: 2px;
+  border-color: rgba(255, 183, 0, 0.6) !important;
+  padding: 12px;
+}
+.theme-color.native-amber .tags-input-wrp input[type=text],
+.theme-color.native-amber .tags-input-wrp input[type=email],
+.theme-color.native-amber .tags-input-wrp input[type=tel] {
+  border: none !important;
+  padding: 8px;
+}
+.theme-color.native-amber .tags-input-wrp .bootstrap-tagsinput {
+  border: none;
+  background-color: transparent !important;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+}
+.theme-color.native-amber .tags-input-wrp .bootstrap-tagsinput input {
+  background-color: transparent !important;
+}
+.theme-color.native-amber .tags-input-wrp .bootstrap-tagsinput .label-info {
+  background-color: rgba(255, 183, 0, 0.8) !important;
+  color: #000 !important;
+  padding: 5px 8px;
+  -webkit-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  display: inline-block;
+  margin-bottom: 6px;
+}
+.theme-color.native-amber .tags-input-wrp .bootstrap-tagsinput .label-info span {
+  display: inline-block;
+  height: 24px;
+  width: 20px;
+  background-color: #c28b00 !important;
+  padding: 0 !important;
+  padding-top: 0px !important;
+  -webkit-border-radius: 2px;
+  -ms-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+  text-align: center;
+}
+.theme-color.native-amber .tags-input-wrp .bootstrap-tagsinput.focus {
   background-color: transparent !important;
   -webkit-box-shadow: none;
   -moz-box-shadow: none;

@@ -859,7 +859,7 @@ class DragNav {
       dom += `>`;
         dom += `<a`;
           if( li.onclick !== '' && li.onclick !== undefined && li.onclick !== null ){
-            dom += ` onclick="${li.onclick}"`;
+            dom += ` onclick="${li.onclick}()"`;
           } if (li.newtab == true) {
             dom += ` target="_blank"`;
           }
