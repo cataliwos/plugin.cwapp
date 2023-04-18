@@ -784,6 +784,7 @@ input:invalid, select:invalid, textarea:invalid{
 .font-size-08{ font-size: 0.8em; }
 .font-size-09{ font-size: 0.9em; }
 .font-size-1{ font-size: 1em; }
+.font-size-1-2{ font-size: 1.2em; }
 .font-size-1-5{ font-size: 1.5em; }
 .font-size-2{ font-size: 2em; }
 .font-size-2-5{ font-size: 2.5em; }
@@ -1558,6 +1559,65 @@ table{
 }
 #cwos-dnav-cartbot:hover{ opacity: 0.85; cursor: pointer;}
 #cwos-dnav-cartbot.cb-full{ background-color: (theme-color('amber', bg)) !important; color: #000; }
+.sub-list{
+  position: relative;
+  margin: 0; padding: 0;
+  list-style: none;
+  li{
+    padding: 18px 20px;
+    position: relative;
+    min-height: 55px;
+    @include animate-all;
+    h1, h2, h3, h4, h5, p{
+      margin: 3.5px 0;
+    }
+    .sos-btn, .sos-button,
+    .cwos-btn, .cwos-button,
+    .theme-btn, .theme-button,
+    .btn, .button{
+      margin-top: -4px;
+    }
+    &:hover{
+      background-color: theme-color('cloud',bg);
+    }
+    &::after{
+      display: block;
+      content: "";
+      position: absolute;
+      width: 98%;
+      left: 1%;
+      bottom: 0;
+      height: 1px;
+      background-color: darken(theme-color('cloud',bg),7%);
+    }
+    &:last-child::after{ display: none; }
+  }
+  &.empty::after{
+    content: "Nothing here yet.";
+    display: inline-block;
+    font-style: italic;
+    padding: 21px 28px;
+  }
+}
+.spin-waiting::before{
+  content: "\f110";
+  display: block;
+  position: absolute;
+  width: 30px; height: 30px;
+  left: 43%;
+  top: 38%;
+  font-size: 2em;
+  font-family: $fa-pro;
+  color: theme-color('grey',bg);
+  z-index: 10;
+  @include spin;
+}
+.spin-waiting:hover::before{display: none;}
+.tbl-wrp {
+  position: relative;
+  width: 100%;
+  overflow-x: auto;
+}
 // tablet view
 @media only screen and (min-width: 48em) {
 }
