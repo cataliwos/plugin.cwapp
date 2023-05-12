@@ -850,12 +850,12 @@ class DragNav {
     $.each(this.list, function(_i, li){
       dom += `<li`;
       let cls_ls = [];
-      li.classname = li.classname.trim();
-        if(li.classname.length && li.classname !== null) {
-          cls_ls = li.classname.split(" ");
-        }
-        if( li.name == cwos.config.page.name ) cls_ls.push("cwos-dnav-current");
-        if (cls_ls.length) dom += ` class="${cls_ls.join(' ')}"`;
+      if ("classname" in li) li.classname = String(li.classname).trim();
+      if(li.classname.length && li.classname !== null) {
+        cls_ls = li.classname.split(" ");
+      }
+      if( li.name == cwos.config.page.name ) cls_ls.push("cwos-dnav-current");
+      if (cls_ls.length) dom += ` class="${cls_ls.join(' ')}"`;
       dom += `>`;
         dom += `<a`;
           if( li.onclick !== '' && li.onclick !== undefined && li.onclick !== null ){
