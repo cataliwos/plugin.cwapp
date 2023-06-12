@@ -187,6 +187,11 @@ String.prototype.escapeHTML = function () {
              .replace(/'/g, "&#039;")
              .replace(/(?:\r\n|\r|\n)/g, "");
 }
+String.prototype.codeSplit = function (prefix_len = 3, separator = "-", split_len = 4) {
+  let prefix = this.substring(0, prefix_len);
+  let code = this.split(prefix)[1];
+  return `${prefix}${separator}${code.match(new RegExp(`.{1,${split_len}}`, 'g')).join(separator)}`;
+}
 const objectLength = (object = {}) => {
   if (typeof object !== "object") return "N/A";
   return Object.keys(object).length;

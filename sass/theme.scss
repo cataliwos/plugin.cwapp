@@ -176,6 +176,26 @@ h1, h2, h3, h4, h5, h6, hgroup, .h-font, .heading-font, .header-font{
     }
   }
 }
+@each $color-name, $color in $theme-colors {
+  @if (in-list($color-name, $none-theme-color) == false) and $color-name != null {
+    #actn-btns.#{$color-name} #actvt{
+     border-color: map.get($color, bg) !important; 
+     color: map.get($color, bg) !important; 
+    }
+    #actn-btns.#{$color-name} #actvt:hover{
+     background-color: map.get($color, bg) !important; 
+     color: map.get($color, fg) !important; 
+    }
+    #data-pager.#{$color-name}, .data-pager.#{$color-name} {
+      background-color: lighten(map.get($color, bg),35%) !important;
+    }
+    #data-pager.#{$color-name} button:hover, .data-pager.#{$color-name} button:hover {
+      color: map.get($color, bg); 
+      background-color: rgba(map.get($color, bg), 0.4);
+    }
+  }
+}
+
 #fader-flow, .fader-flow{
   position: relative;
   display: block;
