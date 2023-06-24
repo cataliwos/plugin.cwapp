@@ -815,14 +815,15 @@ class DragNav {
     let ths = this;
     $(document).find(".cwos-dnav-extend").each(function(_i, elem){
       let data = elem.data;
-      if (
-        "title" in data
-        && "path" in data
-        && "newtab" in data
-        && "onclick" in data
-        && "icon" in data
-        && "name" in data
-        && "classname" in data
+      if ( data && (
+          "title" in data
+          && "path" in data
+          && "newtab" in data
+          && "onclick" in data
+          && "icon" in data
+          && "name" in data
+          && "classname" in data
+        )
       ) {
         ths.list.push(data);
       }
