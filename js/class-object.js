@@ -832,7 +832,7 @@ class DragNav {
   domCartbot () {
     let dom = ``;
     if (this.ready.includes("cartbot")) {
-      dom += `<div id="cwos-dnav-cartbot" class="cb-full" onclick="${this.cartbot.onclick.length ? `${this.cartbot.onclick()}` : `redirectTo('${this.cartbot.path}')`};">`;
+      dom += `<div id="cwos-dnav-cartbot" class="cb-full" onclick="${this.cartbot.onclick.length ? `${this.cartbot.onclick}()` : `redirectTo('${this.cartbot.path}')`};">`;
         dom += `<span class="cb-icon"><i class="fas fa-shopping-cart"></i></span>`;
         dom += `<code id="cwos-dnav-cartbot-val" class="cb-val">${this.cartbot.items > 99 ? "99+" : this.cartbot.items}</code>`;
       dom += `</div>`;
