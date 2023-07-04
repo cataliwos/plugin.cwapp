@@ -719,14 +719,17 @@ function queryString(q){
   //alert(queries['i']);
 	}else{return '';}
 }
+const urlDecode = (url) => {
+  return decodeURIComponent(url.replace(/\+/g, ' '));
+}
 function setGet(url = window.location.href, key = {}, val) {
   let params = {}
   if (typeof key == "object" && objectLength(key)) {
     $.each(key, function(k, v) {
       if (typeof v == "string" || typeof v == "number") params[k] = v;
     });
-  } else if (typeof key == "string" && val) {
-    params[key] = val;
+  } else if (typeof key == "string") {
+    params[key] = val ? val : "";
   } else {
     return url;
   }
