@@ -190,8 +190,8 @@ h1, h2, h3, h4, h5, h6, hgroup, .h-font, .heading-font, .header-font{
       background-color: lighten(map.get($color, bg),35%) !important;
     }
     #data-pager.#{$color-name} button:hover, .data-pager.#{$color-name} button:hover {
-      color: map.get($color, bg); 
-      background-color: rgba(map.get($color, bg), 0.4);
+      color: map.get($color, fg) !important; 
+      background-color: rgba(map.get($color, bg), 0.4) !important;
     }
   }
 }
@@ -1637,6 +1637,136 @@ table{
   position: relative;
   width: 100%;
   overflow-x: auto;
+}
+#data-pager, .data-pager{
+  position: relative;
+  float: right;
+  margin: 20px 0 20px;
+  padding: 12px;
+  padding-right: 58px;
+  height: 90px;
+  background-color: rgba(theme-color('cloud-blue', bg),0.6);
+  .btn-nvbx{
+    display: inline-block;
+    position: relative;
+    margin: 0;
+    height: 100%;
+    min-width: 60px;
+    padding-top: 8px;;
+    button{
+      margin: 0 !important;
+      padding: 0;
+      @include -br(0);
+      @include no-shadow;
+      font-size: 1.5em;
+      text-align: center !important;
+      width: 50px; height: 50px;
+      float: none !important;
+      display: inline-block;
+      align-items: center; 
+      background-color: transparent;
+      &:hover{ color: theme-color('native', bg); background-color: theme-color('cloud-blue', bg);}
+      &:first-child{ margin-right: 0;}
+      &:last-child{ margin-left: 0;}
+      &::before{
+        font-weight: $fa-weight-solid;
+        font-family: $fa-pro, $fa-free;
+      }
+      &#previous-page-btn::before,
+      &#previous-page-button::before,
+      &.previous-page-btn::before,
+      &.previous-page-button::before{
+        content: "\f053";
+      }
+      &#next-page-btn::before,
+      &#next-page-button::before,
+      &.next-page-btn::before,
+      &.next-page-button::before{
+        content: "\f054";
+      }
+    }
+  }
+  .meta-nvbx{
+    display: block;
+    position: relative;
+    float: left;
+    margin: 0;
+    height: 100%;
+    min-width: 60px;
+    padding: 24px 16px;
+    font-family: $header-font;
+    font-size: 1.15em;
+  }
+  .select-nvbx{
+    display: block;
+    float: right;
+    position: relative;
+    margin: 0;
+    height: 100%;
+    min-width: 60px;
+    padding: 10px 16px;
+    select{
+      display: inline-block;
+      height: 50px;
+      margin-bottom: 8px;
+      text-align: center;
+      border-style: solid;
+      border-width: 2px;
+      padding-right: 22px;
+      width: 100%;
+      background-color: transparent;
+      @include no-shadow;
+      -webkit-appearance: none;
+      outline: none;
+      font-family: $header-font;
+      font-size: 1.15em;  
+    }
+    &::after{
+      display: inline-block;
+      position: absolute;
+      right: 21px; top: 22px;
+      font-family: $fa-pro, $fa-free;
+      font-weight: $fa-weight-solid;
+      content: "\f078";
+      font-size: 1.2em;
+    }
+  }
+}
+#fader-sidevw{
+  position: absolute;
+  top: 0;
+  float: none !important;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  overflow-y: auto;
+  &.vw-right{ right: 0 !important;}
+  &.vw-left{ left: 0 !important;}
+}
+.sortable{ position: relative;}
+.sortable > li,
+.sortable > p,
+.sortable > div,
+.sortable > tr{
+  position: relative;
+  cursor:grab;
+  -webkit-transition: none !important;
+  -moz-transition: none !important;
+  -o-transition: none !important;
+  transition: none !important;
+  &::before{
+    content: "\f07d";
+    font-family: 'Font Awesome 5 Pro', 'Font Awesome 5 Free';
+    font-weight: 400;
+    display: inline-block;
+    position: absolute;
+    left: 6px; top: 18%;
+    color: inherit;
+    font-size: 1.3em;
+    @include text-shadow(lighten(#000, 75%));
+    opacity: 0;
+  }
+  &:hover::before{ opacity: 1;}
 }
 // tablet view
 @media only screen and (min-width: 48em) {

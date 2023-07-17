@@ -48,6 +48,16 @@ const tgglActnBtn = () => {
    if (wrpr.hasClass("open")) { clsActnBtn(); } else { opnActnBtn(); }
  }
 };
+const thmLayout = () => {
+  let elHt = [
+    $("#fader-sidevw")
+  ],
+  elWt = [];
+  $.each(elHt, (_i, el) => {
+    console.log(el.length);
+    if (el.length) el.css("height", `${$(window).height()}px`);
+  });
+}
 
 
 function shrinkPlaceholder () { return shrink_ph(); }
@@ -120,6 +130,8 @@ cwos.setup = function () {
 })();
 
 $(document).ready(function(){
+  // thmLayout();
+  // $(window).bind("resize", thmLayout);
   // Dashboard UI
   if (typeof cwos.config.ui == "object") {
     let conf = cwos.config.ui;
