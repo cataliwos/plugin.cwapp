@@ -601,6 +601,11 @@ function ucwords(str) {
       return $1.toUpperCase();
     });
 }
+const propertyExists = (prop, object = {}, hasLen = false) => {
+  let exists = Object.hasOwn(object, prop);
+  if (hasLen && exists) return object[prop].length > 0;
+  return exists;
+}
 String.prototype.ucwords = function(){
   return ucwords(this);
 };
