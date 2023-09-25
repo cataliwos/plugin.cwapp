@@ -85,6 +85,10 @@
           border-left-color: map.get($color, bg) !important;
         }
       }
+      .radio-list li.checked{
+        border-color: map.get($color, bg) !important; 
+        background-color: rgba(map.get($color, bg), 0.4) !important;
+      }
     }
     body.theme-#{$color-name} aside#cwos-sidebar {
       // background-color: rgba(map.get($color, bg), 0.25);
@@ -191,6 +195,10 @@ h1, h2, h3, h4, h5, h6, hgroup, .h-font, .heading-font, .header-font{
     }
     #data-pager.#{$color-name} button:hover, .data-pager.#{$color-name} button:hover {
       color: map.get($color, fg) !important; 
+      background-color: rgba(map.get($color, bg), 0.4) !important;
+    }
+    .radio-list li.checked{
+      border-color: map.get($color, bg) !important; 
       background-color: rgba(map.get($color, bg), 0.4) !important;
     }
   }
