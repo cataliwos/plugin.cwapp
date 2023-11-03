@@ -83,7 +83,7 @@ cwos.randCode = function (len = 8) {
    return result;
 };
 cwos.form = {
-  getInput : function(form, exclude = ["file"]) {
+  getInput : function(form, exclude = []) {
     exclude = typeof exclude === "object" ? exclude : [];
     if (typeof form !== "object") return null;
     let $return = {},

@@ -126,7 +126,7 @@ cwos.setup = function () {
     // alert("<h3>Please wait</h3> <p>We're getting things ready</p>", {type: "progress"});
   }
   $(document).on("click", "#actvt", tgglActnBtn);
-  $(document).on("click", "#page-foot, #main-content, #page-head, #sos-dnav, .close-action-buttons", clsActnBtn);
+  $(document).on("click", "#page-foot, #main-content, #page-head, #cwos-dnav, .close-action-buttons", clsActnBtn);
 })();
 
 $(document).ready(function(){
