@@ -250,7 +250,12 @@ form, .form{
 form.block-ui div label,
 form.block-ui p label,
 form.mat-ui div label,
-form.mat-ui p label{
+form.mat-ui p label,
+.form.block-ui div label,
+.form.block-ui p label,
+.form.mat-ui div label,
+.form.mat-ui p label,
+.form label, form label{
   font-size: 0.95em;
   font-weight: bold;
   color: #8E969F;
