@@ -259,7 +259,7 @@ cwos.form = {
     }
     let fData,
         formInputs = cwos.form.getInput(form);
-    if (typeof formInputs !== "object" || formInputs.length <= 0) {
+    if (typeof formInputs !== "object" || objectLength(formInputs) <= 0) {
       alert("<h2>[3.1] Input error </h2> <p>No form input processed.</p>", {type:"error",exit:true});
       console.error("cwos form not properly configured or has no valid input/value");
       return false;
