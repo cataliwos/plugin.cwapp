@@ -1678,7 +1678,7 @@ table{
       display: inline-block;
       align-items: center; 
       background-color: transparent;
-      &:hover{ color: theme-color('native', bg); background-color: theme-color('cloud-blue', bg);}
+      &:hover{ color: theme-color('catali-blue', bg); background-color: theme-color('cloud-blue', bg);}
       &:first-child{ margin-right: 0;}
       &:last-child{ margin-left: 0;}
       &::before{
