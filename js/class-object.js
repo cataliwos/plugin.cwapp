@@ -75,12 +75,12 @@ function removeAlert(){
 };
 cwos.randCode = function (len = 8) {
   let result = '',
-      chars  = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789abcdefghijklmnopqrstuvwxyz0123456789';
-   let charLen = chars.length;
-   for ( var i = 0; i < len; i++ ) {
-      result += chars.charAt(Math.floor(Math.random() * charLen));
-   }
-   return result;
+    chars  = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789abcdefghijklmnopqrstuvwxyz0123456789';
+  let charLen = chars.length;
+  for ( var i = 0; i < len; i++ ) {
+    result += chars.charAt(Math.floor(Math.random() * charLen));
+  }
+  return result;
 };
 cwos.form = {
   getInput : function(form, exclude = []) {
@@ -215,7 +215,7 @@ cwos.form = {
     return $return;
   },
   validate : function(form) {
-    console.error("cwos.form.validate: NOT READY FOR USE")
+    // console.error("cwos.form.validate: NOT READY FOR USE")
     return false;
   },
   endpoint : function (form) {
@@ -229,7 +229,7 @@ cwos.form = {
       endpoint = actionDomain + actionPath + $(form).attr('action');
     }
     if (!endpoint.is_valid_url()) {
-      console.error(`Invalid form[submit] endpoint: ${endpoint}`);
+      // console.error(`Invalid form[submit] endpoint: ${endpoint}`);
     }
     return endpoint;
   },
@@ -249,7 +249,7 @@ cwos.form = {
   },
   submit : function (form, callback, validate, resetForm, header) {
     if (validate && !cwos.form.validate.all(form)) {
-      console.error("Form was not submitted due to validation error(s)");
+      // console.error("Form was not submitted due to validation error(s)");
       return false;
     }
     let requestMethod = $(form).attr("method").toLowerCase();
@@ -261,7 +261,7 @@ cwos.form = {
         formInputs = cwos.form.getInput(form);
     if (typeof formInputs !== "object" || objectLength(formInputs) <= 0) {
       alert("<h2>[3.1] Input error </h2> <p>No form input processed.</p>", {type:"error",exit:true});
-      console.error("cwos form not properly configured or has no valid input/value");
+      // console.error("cwos form not properly configured or has no valid input/value");
       return false;
     }
     if (requestMethod == 'get') {
@@ -360,7 +360,7 @@ cwos.form = {
 };
 cwos.form.initFile = function (fileInput, statBar) {
   if ($(statBar).length <= 0) {
-    console.error("DOM: status bar not provided");
+    // console.error("DOM: status bar not provided");
   }
   let fileProps = [];
   if( fileInput.files.length > 0 ){
@@ -411,16 +411,16 @@ cwos.form.initFile = function (fileInput, statBar) {
         : "0.0";
       prgLi = $(`<li id="${file.id}"> <span class="ficon ${fileIcon}"></span>  <span class="fname">${file.name}</span> <span class="fsize">${fileSize}</span></li>`);
       prgLi.append($(`<div class=\"prgs\" id="cwos-upl-prog-${file.id}"></div>`))
-           .append($('<span class="stat-uploadn"><i class="fas fa-spinner fa-pulse"></i></span>'))
-           .append($('<span class="stat-waitn"><i class="fas fa-hourglass-half"></i></span>'))
-           .append($('<span class="stat-failed"><i class="fas fa-exclamation-triangle"></i></span>'))
-           .append($('<span class="stat-done"><i class="fas fa-check-circle"></i></span>'))
-           .append($(`<button id="fl-rm-${file.id}" onclick="cwos.form.remFile('${file.id}');" class="cwos-btn red frmv"><i class="fas fa-times fa-sm"></i></button>`));
+        .append($('<span class="stat-uploadn"><i class="fas fa-spinner fa-pulse"></i></span>'))
+        .append($('<span class="stat-waitn"><i class="fas fa-hourglass-half"></i></span>'))
+        .append($('<span class="stat-failed"><i class="fas fa-exclamation-triangle"></i></span>'))
+        .append($('<span class="stat-done"><i class="fas fa-check-circle"></i></span>'))
+        .append($(`<button id="fl-rm-${file.id}" onclick="cwos.form.remFile('${file.id}');" class="cwos-btn red frmv"><i class="fas fa-times fa-sm"></i></button>`));
       prgWrap.append(prgLi);
     });
   }
   if (cwos.form.files.length < 1) {
-    console.error(`No file input found for given [form] with id: ${form}`);
+    // console.error(`No file input found for given [form] with id: ${form}`);
     // return false;
   }
   // console.log(cwos.form.files);
@@ -435,7 +435,7 @@ cwos.form.resetFiles = () => {
 }
 cwos.form.uploadProgress = function (id, upl) {
   if (typeof upl !== "object") {
-    console.error("Invalid upload response data [upl]");
+    // console.error("Invalid upload response data [upl]");
     return false;
   }
   let dom_el = $(document).find(`#cwos-upl-prog-${id}`);
@@ -447,7 +447,7 @@ cwos.form.uploadProgress = function (id, upl) {
 cwos.form.upload = function(form, header, afterUpload) {
   // initialize
   if ($(cwos.form.files).length < 1) {
-    console.error("No file was initialized");
+    // console.error("No file was initialized");
     return false;
   }
   let formInputs = cwos.form.getInput(form,["file"]),
@@ -487,14 +487,14 @@ cwos.form.upload = function(form, header, afterUpload) {
       contentType: false,
       processData: false,
       xhr: function() {
-         var xhr = $.ajaxSettings.xhr();
-         if(xhr.upload){
-           xhr.upload.addEventListener('progress', function(uplStat) {
-             cwos.form.uploadProgress(fid, uplStat);
-           }, false);
-         }
-         return xhr;
-       },
+        var xhr = $.ajaxSettings.xhr();
+        if(xhr.upload){
+          xhr.upload.addEventListener('progress', function(uplStat) {
+            cwos.form.uploadProgress(fid, uplStat);
+          }, false);
+        }
+        return xhr;
+      },
       success  : function(data){
         ++queryCount;
         if (data.status == undefined || data.message == undefined || data.errors == undefined) {
@@ -807,7 +807,7 @@ class DragNav {
       req.then((data) => {
         this[callback](data);
       }).catch((errormsg)=>{
-        console.error(errormsg);
+        // console.error(errormsg);
       });
     }
   }
