@@ -181,16 +181,17 @@ String.prototype.is_valid_url = function () {
 }
 String.prototype.escapeHTML = function () {
   return this.replace(/&/g, "&amp;")
-             .replace(/</g, "&lt;")
-             .replace(/>/g, "&gt;")
-             .replace(/"/g, "&quot;")
-             .replace(/'/g, "&#039;")
-             .replace(/(?:\r\n|\r|\n)/g, "");
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#039;")
+    .replace(/(?:\r\n|\r|\n)/g, "");
 }
 String.prototype.codeSplit = function (prefix_len = 3, separator = "-", split_len = 4) {
   let prefix = this.substring(0, prefix_len);
-  let code = this.split(prefix)[1];
-  return `${prefix}${separator}${code.match(new RegExp(`.{1,${split_len}}`, 'g')).join(separator)}`;
+  let cs = this, code = this.split(prefix)[1];
+  let mtch = code.match(new RegExp(`.{1,${split_len}}`, 'g'));
+  return mtch ? `${prefix}${separator}${mtch.join(separator)}` : cs;
 }
 const objectLength = (object = {}) => {
   if (typeof object !== "object") return "N/A";
