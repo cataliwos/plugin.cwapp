@@ -1738,69 +1738,6 @@ body.theme-black-gold .radio-list li.checked {
   background-color: rgba(0, 0, 0, 0.4) !important;
 }
 
-body.theme-black-rosegold a {
-  outline: none;
-  border: none;
-  text-decoration: none;
-  transition: all 0.2s ease-in;
-  color: #000;
-}
-body.theme-black-rosegold a:focus {
-  outline: none;
-}
-body.theme-black-rosegold a:visited {
-  color: black;
-  outline: none;
-}
-body.theme-black-rosegold a:hover {
-  color: black;
-}
-body.theme-black-rosegold #cwos-header {
-  background-color: #000 !important;
-  color: #FDD09F !important;
-}
-body.theme-black-rosegold #cwos-navbar-toggle:hover,
-body.theme-black-rosegold #cwos-sidebar-toggle:hover,
-body.theme-black-rosegold #cwos-navbar-toggle.active,
-body.theme-black-rosegold #cwos-sidebar-toggle.active {
-  color: #000 !important;
-}
-body.theme-black-rosegold #cwos-dnav {
-  color: #000 !important;
-}
-body.theme-black-rosegold #cwos-dnav .cwos-dnav-current a {
-  border-top-color: #000 !important;
-}
-body.theme-black-rosegold #cwos-dnav li a {
-  color: #000 !important;
-}
-body.theme-black-rosegold #cwos-dnav li a:hover {
-  color: #FDD09F !important;
-  background-color: #000 !important;
-}
-body.theme-black-rosegold #cwos-sltitle h3 {
-  color: #000 !important;
-}
-body.theme-black-rosegold #cwos-sptltoggl:hover, body.theme-black-rosegold #cwos-sptltoggl.btn-opn {
-  background-color: #000 !important;
-}
-body.theme-black-rosegold #cwos-sllinks li:hover {
-  color: #000 !important;
-}
-body.theme-black-rosegold .cwos-sidenav li::after {
-  background-color: #000 !important;
-}
-body.theme-black-rosegold .cwos-sidenav li:hover {
-  color: #000 !important;
-}
-body.theme-black-rosegold .cwos-sidenav li.cwos-curnav {
-  border-left-color: #000 !important;
-}
-body.theme-black-rosegold .radio-list li.checked {
-  border-color: #000 !important;
-  background-color: rgba(0, 0, 0, 0.4) !important;
-}
-
 body.theme-red a {
   outline: none;
   border: none;
@@ -3924,30 +3861,6 @@ h1, h2, h3, h4, h5, h6, hgroup, .h-font, .heading-font, .header-font {
   background-color: rgba(0, 0, 0, 0.4) !important;
 }
 
-#actn-btns.black-rosegold #actvt {
-  border-color: #000 !important;
-  color: #000 !important;
-}
-
-#actn-btns.black-rosegold #actvt:hover {
-  background-color: #000 !important;
-  color: #FDD09F !important;
-}
-
-#data-pager.black-rosegold, .data-pager.black-rosegold {
-  background-color: #595959 !important;
-}
-
-#data-pager.black-rosegold button:hover, .data-pager.black-rosegold button:hover {
-  color: #FDD09F !important;
-  background-color: rgba(0, 0, 0, 0.4) !important;
-}
-
-.radio-list li.checked {
-  border-color: #000 !important;
-  background-color: rgba(0, 0, 0, 0.4) !important;
-}
-
 #actn-btns.red #actvt {
   border-color: #F44336 !important;
   color: #F44336 !important;
@@ -4950,21 +4863,6 @@ blockquote p {
   background-color: black !important;
 }
 
-.theme-btn.black-rosegold,
-.theme-button.black-rosegold,
-.cwos-btn.black-rosegold,
-.cwos-button.black-rosegold {
-  color: #FDD09F !important;
-  background-color: #000;
-  transition: background 0.2s ease-in;
-}
-.theme-btn.black-rosegold:hover,
-.theme-button.black-rosegold:hover,
-.cwos-btn.black-rosegold:hover,
-.cwos-button.black-rosegold:hover {
-  background-color: black !important;
-}
-
 .theme-btn.red,
 .theme-button.red,
 .cwos-btn.red,
@@ -5564,10 +5462,6 @@ input.hidden {
 }
 
 .bg-black-gold {
-  background-color: #000 !important;
-}
-
-.bg-black-rosegold {
   background-color: #000 !important;
 }
 
@@ -6283,90 +6177,6 @@ input.hidden {
   text-align: center;
 }
 .theme-color.black-gold .tags-input-wrp .bootstrap-tagsinput.focus {
-  background-color: transparent !important;
-  box-shadow: none;
-}
-
-.theme-color.black-rosegold {
-  border-color: #000 !important;
-}
-.theme-color.black-rosegold.color-text, .theme-color.black-rosegold .color-text {
-  color: #000 !important;
-}
-.theme-color.black-rosegold.color-bg, .theme-color.black-rosegold .color-bg, .theme-color.black-rosegold.color-bg label, .theme-color.black-rosegold .color-bg label {
-  color: #FDD09F !important;
-  border-color: black !important;
-  background-color: #000 !important;
-}
-.theme-color.black-rosegold.no-bgc, .theme-color.black-rosegold .no-bgc {
-  background-color: transparent !important;
-}
-.theme-color.black-rosegold div, .theme-color.black-rosegold p, .theme-color.black-rosegold h1, .theme-color.black-rosegold h3, .theme-color.black-rosegold h4, .theme-color.black-rosegold h5, .theme-color.black-rosegold h6, .theme-color.black-rosegold article, .theme-color.black-rosegold section, .theme-color.black-rosegold table, .theme-color.black-rosegold tr, .theme-color.black-rosegold th, .theme-color.black-rosegold thead, .theme-color.black-rosegold tbody, .theme-color.black-rosegold td, .theme-color.black-rosegold header, .theme-color.black-rosegold nav, .theme-color.black-rosegold aside, .theme-color.black-rosegold footer, .theme-color.black-rosegold ul, .theme-color.black-rosegold ol, .theme-color.black-rosegold li, .theme-color.black-rosegold button {
-  border-color: #000;
-}
-.theme-color.black-rosegold div.color-bg, .theme-color.black-rosegold div .color-bg, .theme-color.black-rosegold p.color-bg, .theme-color.black-rosegold p .color-bg, .theme-color.black-rosegold h1.color-bg, .theme-color.black-rosegold h1 .color-bg, .theme-color.black-rosegold h3.color-bg, .theme-color.black-rosegold h3 .color-bg, .theme-color.black-rosegold h4.color-bg, .theme-color.black-rosegold h4 .color-bg, .theme-color.black-rosegold h5.color-bg, .theme-color.black-rosegold h5 .color-bg, .theme-color.black-rosegold h6.color-bg, .theme-color.black-rosegold h6 .color-bg, .theme-color.black-rosegold article.color-bg, .theme-color.black-rosegold article .color-bg, .theme-color.black-rosegold section.color-bg, .theme-color.black-rosegold section .color-bg, .theme-color.black-rosegold table.color-bg, .theme-color.black-rosegold table .color-bg, .theme-color.black-rosegold tr.color-bg, .theme-color.black-rosegold tr .color-bg, .theme-color.black-rosegold th.color-bg, .theme-color.black-rosegold th .color-bg, .theme-color.black-rosegold thead.color-bg, .theme-color.black-rosegold thead .color-bg, .theme-color.black-rosegold tbody.color-bg, .theme-color.black-rosegold tbody .color-bg, .theme-color.black-rosegold td.color-bg, .theme-color.black-rosegold td .color-bg, .theme-color.black-rosegold header.color-bg, .theme-color.black-rosegold header .color-bg, .theme-color.black-rosegold nav.color-bg, .theme-color.black-rosegold nav .color-bg, .theme-color.black-rosegold aside.color-bg, .theme-color.black-rosegold aside .color-bg, .theme-color.black-rosegold footer.color-bg, .theme-color.black-rosegold footer .color-bg, .theme-color.black-rosegold ul.color-bg, .theme-color.black-rosegold ul .color-bg, .theme-color.black-rosegold ol.color-bg, .theme-color.black-rosegold ol .color-bg, .theme-color.black-rosegold li.color-bg, .theme-color.black-rosegold li .color-bg, .theme-color.black-rosegold button.color-bg, .theme-color.black-rosegold button .color-bg {
-  border-color: black !important;
-}
-.theme-color.black-rosegold input, .theme-color.black-rosegold select, .theme-color.black-rosegold button, .theme-color.black-rosegold textarea {
-  border-color: #383838 !important;
-}
-.theme-color.black-rosegold input:focus, .theme-color.black-rosegold input:valid, .theme-color.black-rosegold input.has-val, .theme-color.black-rosegold select:focus, .theme-color.black-rosegold select:valid, .theme-color.black-rosegold select.has-val, .theme-color.black-rosegold button:focus, .theme-color.black-rosegold button:valid, .theme-color.black-rosegold button.has-val, .theme-color.black-rosegold textarea:focus, .theme-color.black-rosegold textarea:valid, .theme-color.black-rosegold textarea.has-val {
-  border-color: #000 !important;
-}
-.theme-color.black-rosegold.color-bg textarea:valid, .theme-color.black-rosegold.color-bg textarea:focus, .theme-color.black-rosegold.color-bg textarea.has-val, .theme-color.black-rosegold.color-bg input[type=color]:valid, .theme-color.black-rosegold.color-bg input[type=color]:focus, .theme-color.black-rosegold.color-bg input[type=color].has-val, .theme-color.black-rosegold.color-bg input[type=date]:valid, .theme-color.black-rosegold.color-bg input[type=date]:focus, .theme-color.black-rosegold.color-bg input[type=date].has-val, .theme-color.black-rosegold.color-bg input[type=datetime]:valid, .theme-color.black-rosegold.color-bg input[type=datetime]:focus, .theme-color.black-rosegold.color-bg input[type=datetime].has-val, .theme-color.black-rosegold.color-bg input[type=datetime-local]:valid, .theme-color.black-rosegold.color-bg input[type=datetime-local]:focus, .theme-color.black-rosegold.color-bg input[type=datetime-local].has-val, .theme-color.black-rosegold.color-bg input[type=email]:valid, .theme-color.black-rosegold.color-bg input[type=email]:focus, .theme-color.black-rosegold.color-bg input[type=email].has-val, .theme-color.black-rosegold.color-bg input[type=month]:valid, .theme-color.black-rosegold.color-bg input[type=month]:focus, .theme-color.black-rosegold.color-bg input[type=month].has-val, .theme-color.black-rosegold.color-bg input[type=number]:valid, .theme-color.black-rosegold.color-bg input[type=number]:focus, .theme-color.black-rosegold.color-bg input[type=number].has-val, .theme-color.black-rosegold.color-bg input[type=password]:valid, .theme-color.black-rosegold.color-bg input[type=password]:focus, .theme-color.black-rosegold.color-bg input[type=password].has-val, .theme-color.black-rosegold.color-bg input[type=range]:valid, .theme-color.black-rosegold.color-bg input[type=range]:focus, .theme-color.black-rosegold.color-bg input[type=range].has-val, .theme-color.black-rosegold.color-bg input[type=search]:valid, .theme-color.black-rosegold.color-bg input[type=search]:focus, .theme-color.black-rosegold.color-bg input[type=search].has-val, .theme-color.black-rosegold.color-bg input[type=submit]:valid, .theme-color.black-rosegold.color-bg input[type=submit]:focus, .theme-color.black-rosegold.color-bg input[type=submit].has-val, .theme-color.black-rosegold.color-bg input[type=tel]:valid, .theme-color.black-rosegold.color-bg input[type=tel]:focus, .theme-color.black-rosegold.color-bg input[type=tel].has-val, .theme-color.black-rosegold.color-bg input[type=text]:valid, .theme-color.black-rosegold.color-bg input[type=text]:focus, .theme-color.black-rosegold.color-bg input[type=text].has-val, .theme-color.black-rosegold.color-bg input[type=time]:valid, .theme-color.black-rosegold.color-bg input[type=time]:focus, .theme-color.black-rosegold.color-bg input[type=time].has-val, .theme-color.black-rosegold.color-bg input[type=url]:valid, .theme-color.black-rosegold.color-bg input[type=url]:focus, .theme-color.black-rosegold.color-bg input[type=url].has-val, .theme-color.black-rosegold.color-bg input[type=week]:valid, .theme-color.black-rosegold.color-bg input[type=week]:focus, .theme-color.black-rosegold.color-bg input[type=week].has-val, .theme-color.black-rosegold .color-bg textarea:valid, .theme-color.black-rosegold .color-bg textarea:focus, .theme-color.black-rosegold .color-bg textarea.has-val, .theme-color.black-rosegold .color-bg input[type=color]:valid, .theme-color.black-rosegold .color-bg input[type=color]:focus, .theme-color.black-rosegold .color-bg input[type=color].has-val, .theme-color.black-rosegold .color-bg input[type=date]:valid, .theme-color.black-rosegold .color-bg input[type=date]:focus, .theme-color.black-rosegold .color-bg input[type=date].has-val, .theme-color.black-rosegold .color-bg input[type=datetime]:valid, .theme-color.black-rosegold .color-bg input[type=datetime]:focus, .theme-color.black-rosegold .color-bg input[type=datetime].has-val, .theme-color.black-rosegold .color-bg input[type=datetime-local]:valid, .theme-color.black-rosegold .color-bg input[type=datetime-local]:focus, .theme-color.black-rosegold .color-bg input[type=datetime-local].has-val, .theme-color.black-rosegold .color-bg input[type=email]:valid, .theme-color.black-rosegold .color-bg input[type=email]:focus, .theme-color.black-rosegold .color-bg input[type=email].has-val, .theme-color.black-rosegold .color-bg input[type=month]:valid, .theme-color.black-rosegold .color-bg input[type=month]:focus, .theme-color.black-rosegold .color-bg input[type=month].has-val, .theme-color.black-rosegold .color-bg input[type=number]:valid, .theme-color.black-rosegold .color-bg input[type=number]:focus, .theme-color.black-rosegold .color-bg input[type=number].has-val, .theme-color.black-rosegold .color-bg input[type=password]:valid, .theme-color.black-rosegold .color-bg input[type=password]:focus, .theme-color.black-rosegold .color-bg input[type=password].has-val, .theme-color.black-rosegold .color-bg input[type=range]:valid, .theme-color.black-rosegold .color-bg input[type=range]:focus, .theme-color.black-rosegold .color-bg input[type=range].has-val, .theme-color.black-rosegold .color-bg input[type=search]:valid, .theme-color.black-rosegold .color-bg input[type=search]:focus, .theme-color.black-rosegold .color-bg input[type=search].has-val, .theme-color.black-rosegold .color-bg input[type=submit]:valid, .theme-color.black-rosegold .color-bg input[type=submit]:focus, .theme-color.black-rosegold .color-bg input[type=submit].has-val, .theme-color.black-rosegold .color-bg input[type=tel]:valid, .theme-color.black-rosegold .color-bg input[type=tel]:focus, .theme-color.black-rosegold .color-bg input[type=tel].has-val, .theme-color.black-rosegold .color-bg input[type=text]:valid, .theme-color.black-rosegold .color-bg input[type=text]:focus, .theme-color.black-rosegold .color-bg input[type=text].has-val, .theme-color.black-rosegold .color-bg input[type=time]:valid, .theme-color.black-rosegold .color-bg input[type=time]:focus, .theme-color.black-rosegold .color-bg input[type=time].has-val, .theme-color.black-rosegold .color-bg input[type=url]:valid, .theme-color.black-rosegold .color-bg input[type=url]:focus, .theme-color.black-rosegold .color-bg input[type=url].has-val, .theme-color.black-rosegold .color-bg input[type=week]:valid, .theme-color.black-rosegold .color-bg input[type=week]:focus, .theme-color.black-rosegold .color-bg input[type=week].has-val {
-  border-color: black !important;
-}
-.theme-color.black-rosegold.color-bg button, .theme-color.black-rosegold.color-bg input[type=button], .theme-color.black-rosegold.color-bg input[type=reset], .theme-color.black-rosegold .color-bg button, .theme-color.black-rosegold .color-bg input[type=button], .theme-color.black-rosegold .color-bg input[type=reset] {
-  border: solid 2px #242424 !important;
-}
-.theme-color.black-rosegold.color-bg button:focus, .theme-color.black-rosegold.color-bg input[type=button]:focus, .theme-color.black-rosegold.color-bg input[type=reset]:focus, .theme-color.black-rosegold .color-bg button:focus, .theme-color.black-rosegold .color-bg input[type=button]:focus, .theme-color.black-rosegold .color-bg input[type=reset]:focus {
-  border: solid 2px black !important;
-}
-.theme-color.black-rosegold input[type=checkbox]:checked + label,
-.theme-color.black-rosegold input[type=radio]:checked + label,
-.theme-color.black-rosegold input[type=checkbox]:checked + label::before,
-.theme-color.black-rosegold input[type=radio]:checked + label::before {
-  color: #000 !important;
-}
-.theme-color.black-rosegold .tags-input-wrp {
-  border-style: solid;
-  border-width: 2px;
-  border-color: rgba(0, 0, 0, 0.6) !important;
-  padding: 12px;
-}
-.theme-color.black-rosegold .tags-input-wrp input[type=text],
-.theme-color.black-rosegold .tags-input-wrp input[type=email],
-.theme-color.black-rosegold .tags-input-wrp input[type=tel] {
-  border: none !important;
-  padding: 8px;
-}
-.theme-color.black-rosegold .tags-input-wrp .bootstrap-tagsinput {
-  border: none;
-  background-color: transparent !important;
-  box-shadow: none;
-}
-.theme-color.black-rosegold .tags-input-wrp .bootstrap-tagsinput input {
-  background-color: transparent !important;
-}
-.theme-color.black-rosegold .tags-input-wrp .bootstrap-tagsinput .label-info {
-  background-color: rgba(0, 0, 0, 0.8) !important;
-  color: #FDD09F !important;
-  padding: 5px 8px;
-  border-radius: 3px;
-  display: inline-block;
-  margin-bottom: 6px;
-}
-.theme-color.black-rosegold .tags-input-wrp .bootstrap-tagsinput .label-info span {
-  display: inline-block;
-  height: 24px;
-  width: 20px;
-  background-color: black !important;
-  padding: 0 !important;
-  padding-top: 0px !important;
-  border-radius: 2px;
-  text-align: center;
-}
-.theme-color.black-rosegold .tags-input-wrp .bootstrap-tagsinput.focus {
   background-color: transparent !important;
   box-shadow: none;
 }
