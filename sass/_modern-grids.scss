@@ -1,0 +1,168 @@
+// ===========================
+// Grid System (Backward Compatible with Masonry Upgrade)
+// Supports: Phone, Tablet, Laptop, Desktop
+// ===========================
+
+/* Box-sizing reset */
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Standard .row container using flex for classic grid layout */
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 120rem;
+  margin: 0 auto;
+}
+
+/* Legacy grid columns – applied to direct children
+   Example: .grid-12-phone, .grid-6-tablet, .grid-4-laptop, .grid-3-desktop */
+[class*="grid-"] {
+  padding: 0.65rem;
+  float: left;
+  position: relative;
+  width: 100%;
+}
+
+[class*="grid-"]:last-of-type {
+  float: right;
+}
+
+/* Responsive grid definitions */
+
+/* Phone: max-width 768px */
+@media only screen and (max-width: 768px) {
+  .grid-1-phone { width: 8.333%; }
+  .grid-2-phone { width: 16.667%; }
+  .grid-3-phone { width: 25%; }
+  .grid-4-phone { width: 33.333%; }
+  .grid-5-phone { width: 41.667%; }
+  .grid-6-phone { width: 50%; }
+  .grid-7-phone { width: 58.333%; }
+  .grid-8-phone { width: 66.667%; }
+  .grid-9-phone { width: 75%; }
+  .grid-10-phone { width: 83.333%; }
+  .grid-11-phone { width: 91.667%; }
+  .grid-12-phone { width: 100%; }
+}
+
+/* Tablet: min-width 769px and max-width 1024px */
+@media only screen and (min-width: 769px) and (max-width: 1024px) {
+  .grid-1-tablet { width: 8.333%; }
+  .grid-2-tablet { width: 16.667%; }
+  .grid-3-tablet { width: 25%; }
+  .grid-4-tablet { width: 33.333%; }
+  .grid-5-tablet { width: 41.667%; }
+  .grid-6-tablet { width: 50%; }
+  .grid-7-tablet { width: 58.333%; }
+  .grid-8-tablet { width: 66.667%; }
+  .grid-9-tablet { width: 75%; }
+  .grid-10-tablet { width: 83.333%; }
+  .grid-11-tablet { width: 91.667%; }
+  .grid-12-tablet { width: 100%; }
+}
+
+/* Laptop: min-width 1025px and max-width 1440px */
+@media only screen and (min-width: 1025px) and (max-width: 1440px) {
+  .grid-1-laptop { width: 8.333%; }
+  .grid-2-laptop { width: 16.667%; }
+  .grid-3-laptop { width: 25%; }
+  .grid-4-laptop { width: 33.333%; }
+  .grid-5-laptop { width: 41.667%; }
+  .grid-6-laptop { width: 50%; }
+  .grid-7-laptop { width: 58.333%; }
+  .grid-8-laptop { width: 66.667%; }
+  .grid-9-laptop { width: 75%; }
+  .grid-10-laptop { width: 83.333%; }
+  .grid-11-laptop { width: 91.667%; }
+  .grid-12-laptop { width: 100%; }
+}
+
+/* Desktop: min-width 1441px */
+@media only screen and (min-width: 1441px) {
+  .grid-1-desktop { width: 8.333%; }
+  .grid-2-desktop { width: 16.667%; }
+  .grid-3-desktop { width: 25%; }
+  .grid-4-desktop { width: 33.333%; }
+  .grid-5-desktop { width: 41.667%; }
+  .grid-6-desktop { width: 50%; }
+  .grid-7-desktop { width: 58.333%; }
+  .grid-8-desktop { width: 66.667%; }
+  .grid-9-desktop { width: 75%; }
+  .grid-10-desktop { width: 83.333%; }
+  .grid-11-desktop { width: 91.667%; }
+  .grid-12-desktop { width: 100%; }
+}
+
+/* ------------------------------ */
+/* Masonry Layout Overrides */
+/*
+  Activate masonry mode by adding .is-masonry to the .row container.
+  In masonry mode, the layout switches to a CSS Columns model.
+  Desktop column count is set with helper classes (.col-#),
+  with optional overrides for tablet (.col-#-tablet) and phone (.col-#-phone).
+*/
+.row.is-masonry {
+  display: block;
+  column-gap: 1.5rem;
+  
+  /* Override children styles for CSS Columns */
+  > [class*="grid-"] {
+    float: none !important;
+    width: auto !important;
+    display: inline-block;
+    break-inside: avoid;
+    margin-bottom: 1.5rem;
+  }
+  > .full-width {
+    // Force it to break out of the column flow
+    column-span: all;
+    -webkit-column-span: all;    // WebKit browsers
+    // Make sure it’s treated as a block that fills the container
+    display: block;
+    width: 100%;
+    // Avoid splitting it between columns
+    break-inside: avoid;
+    margin-bottom: 1.5rem;       // match your normal item spacing
+  }
+  
+  /* Desktop helper: .col-# sets column-count */
+  @for $i from 1 through 12 {
+    &.col-#{$i} {
+      column-count: $i;
+    }
+  }
+}
+
+/* Tablet overrides: if .col-#-tablet is present, use that;
+   otherwise default to 2 columns */
+@media only screen and (min-width: 769px) and (max-width: 1024px) {
+  .row.is-masonry {
+    @for $i from 1 through 12 {
+      &.col-#{$i}-tablet {
+        column-count: $i !important;
+      }
+    }
+    &:not([class*="-tablet"]) {
+      column-count: 2;
+    }
+  }
+}
+
+/* Phone overrides: if .col-#-phone is present, use that;
+   otherwise default to 1 column */
+@media only screen and (max-width: 768px) {
+  .row.is-masonry {
+    @for $i from 1 through 12 {
+      &.col-#{$i}-phone {
+        column-count: $i !important;
+      }
+    }
+    &:not([class*="-phone"]) {
+      column-count: 1 !important;
+    }
+  }
+}

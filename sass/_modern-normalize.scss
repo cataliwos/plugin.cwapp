@@ -1,0 +1,195 @@
+// Modern Normalize Stylesheet using SCSS
+// Based on normalization best practices, this file preserves useful defaults
+// while smoothing over cross-browser inconsistencies.
+
+/* Document */
+html {
+  line-height: 1.15; /* Improve readability and consistency */
+  -webkit-text-size-adjust: 100%; /* Prevent adjustments after orientation changes in iOS */
+}
+
+/* Body */
+body {
+  margin: 0;
+}
+
+/* Main content */
+main {
+  display: block;
+}
+
+/* Headings */
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+
+/* Horizontal rule */
+hr {
+  box-sizing: content-box;
+  height: 0;
+  overflow: visible;
+}
+
+/* Preformatted text */
+pre {
+  font-family: monospace, monospace;
+  font-size: 1em;
+}
+
+/* Anchors */
+a {
+  background-color: transparent;
+}
+
+/* Abbreviations */
+abbr[title] {
+  border-bottom: none;
+  text-decoration: underline dotted;
+}
+
+/* Bold text */
+b,
+strong {
+  font-weight: bolder;
+}
+
+/* Code and keyboard input */
+code,
+kbd,
+samp {
+  font-family: monospace, monospace;
+  font-size: 1em;
+}
+
+/* Smaller text */
+small {
+  font-size: 80%;
+}
+
+/* Sub and superscripts */
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+sup {
+  top: -0.5em;
+}
+
+/* Images */
+img {
+  border-style: none;
+}
+
+/* Form elements */
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: inherit;
+  font-size: 100%;
+  line-height: 1.15;
+  margin: 0;
+}
+
+/* Remove overflow for buttons and inputs */
+button,
+input {
+  overflow: visible;
+}
+
+/* Remove text transformation in buttons and selects */
+button,
+select {
+  text-transform: none;
+}
+
+/* Normalize button appearance */
+button,
+html [type="button"],
+[type="reset"],
+[type="submit"] {
+  -webkit-appearance: button;
+}
+
+/* Fieldset */
+fieldset {
+  padding: 0.35em 0.75em 0.625em;
+}
+
+/* Legend */
+legend {
+  box-sizing: border-box;
+  color: inherit;
+  display: table;
+  max-width: 100%;
+  padding: 0;
+  white-space: normal;
+}
+
+/* Progress elements */
+progress {
+  vertical-align: baseline;
+}
+
+/* Textarea overflow */
+textarea {
+  overflow: auto;
+}
+
+/* Checkboxes and radio buttons */
+[type="checkbox"],
+[type="radio"] {
+  box-sizing: border-box;
+  padding: 0;
+}
+
+/* Number inputs */
+[type="number"]::-webkit-inner-spin-button,
+[type="number"]::-webkit-outer-spin-button {
+  height: auto;
+}
+
+/* Search inputs */
+[type="search"] {
+  -webkit-appearance: textfield;
+  outline-offset: -2px;
+}
+
+[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+/* File upload button */
+::-webkit-file-upload-button {
+  -webkit-appearance: button;
+  font: inherit;
+}
+
+/* Details and summary */
+details {
+  display: block;
+}
+
+summary {
+  display: list-item;
+}
+
+/* Template elements */
+template {
+  display: none;
+}
+
+/* Hidden attribute */
+[hidden] {
+  display: none;
+}
