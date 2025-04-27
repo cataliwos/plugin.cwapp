@@ -342,6 +342,26 @@ template {
   .grid-12-phone {
     width: 100%;
   }
+  .center-phone {
+    margin-left: auto;
+    margin-right: auto;
+    float: none !important;
+  }
+  .uncenter-phone {
+    margin-left: 0;
+    margin-right: 0;
+    float: left !important;
+  }
+  .uncenter-phone.right {
+    float: right !important;
+  }
+  [class*=grid-].phone-reset {
+    margin-left: 0;
+    margin-right: 0;
+    left: auto;
+    right: auto;
+    float: left;
+  }
 }
 /* Tablet: min-width $tablet-min and max-width $tablet-max */
 @media only screen and (min-width: 769px) and (max-width: 1024px) {
@@ -380,6 +400,26 @@ template {
   }
   .grid-12-tablet {
     width: 100%;
+  }
+  .center-tablet {
+    margin-left: auto;
+    margin-right: auto;
+    float: none !important;
+  }
+  .uncenter-tablet {
+    margin-left: 0;
+    margin-right: 0;
+    float: left !important;
+  }
+  .uncenter-tablet.right {
+    float: right !important;
+  }
+  [class*=grid-].tablet-reset {
+    margin-left: 0;
+    margin-right: 0;
+    left: auto;
+    right: auto;
+    float: left;
   }
 }
 /* Laptop: min-width $laptop-min and max-width $laptop-max */
@@ -420,6 +460,26 @@ template {
   .grid-12-laptop {
     width: 100%;
   }
+  .center-laptop {
+    margin-left: auto;
+    margin-right: auto;
+    float: none !important;
+  }
+  .uncenter-laptop {
+    margin-left: 0;
+    margin-right: 0;
+    float: left !important;
+  }
+  .uncenter-laptop.right {
+    float: right !important;
+  }
+  [class*=grid-].laptop-reset {
+    margin-left: 0;
+    margin-right: 0;
+    left: auto;
+    right: auto;
+    float: left;
+  }
 }
 /* Desktop: min-width $desktop-min */
 @media only screen and (min-width: 1441px) {
@@ -458,6 +518,26 @@ template {
   }
   .grid-12-desktop {
     width: 100%;
+  }
+  .center-desktop {
+    margin-left: auto;
+    margin-right: auto;
+    float: none !important;
+  }
+  .uncenter-desktop {
+    margin-left: 0;
+    margin-right: 0;
+    float: left !important;
+  }
+  .uncenter-desktop.right {
+    float: right !important;
+  }
+  [class*=grid-].desktop-reset {
+    margin-left: 0;
+    margin-right: 0;
+    left: auto;
+    right: auto;
+    float: left;
   }
 }
 /* ------------------------------ */
