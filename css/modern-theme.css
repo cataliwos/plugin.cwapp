@@ -304,7 +304,7 @@ template {
 }
 
 /* Responsive grid definitions */
-/* Phone: max-width 768px */
+/* Phone: max-width $phone-max */
 @media only screen and (max-width: 768px) {
   .grid-1-phone {
     width: 8.333%;
@@ -343,7 +343,7 @@ template {
     width: 100%;
   }
 }
-/* Tablet: min-width 769px and max-width 1024px */
+/* Tablet: min-width $tablet-min and max-width $tablet-max */
 @media only screen and (min-width: 769px) and (max-width: 1024px) {
   .grid-1-tablet {
     width: 8.333%;
@@ -382,7 +382,7 @@ template {
     width: 100%;
   }
 }
-/* Laptop: min-width 1025px and max-width 1440px */
+/* Laptop: min-width $laptop-min and max-width $laptop-max */
 @media only screen and (min-width: 1025px) and (max-width: 1440px) {
   .grid-1-laptop {
     width: 8.333%;
@@ -421,7 +421,7 @@ template {
     width: 100%;
   }
 }
-/* Desktop: min-width 1441px */
+/* Desktop: min-width $desktop-min */
 @media only screen and (min-width: 1441px) {
   .grid-1-desktop {
     width: 8.333%;
@@ -468,14 +468,14 @@ template {
   Desktop column count is set with helper classes (.col-#),
   with optional overrides for tablet (.col-#-tablet) and phone (.col-#-phone).
 */
-.row.is-masonry {
+.row.is-masonry, .is-masonry {
   display: block;
   -moz-column-gap: 1.5rem;
        column-gap: 1.5rem;
   /* Override children styles for CSS Columns */
   /* Desktop helper: .col-# sets column-count */
 }
-.row.is-masonry > [class*=grid-] {
+.row.is-masonry > [class*=grid-], .is-masonry > [class*=grid-] {
   float: none !important;
   width: auto !important;
   display: inline-block;
@@ -483,7 +483,7 @@ template {
        break-inside: avoid;
   margin-bottom: 1.5rem;
 }
-.row.is-masonry > .full-width {
+.row.is-masonry > .full-width, .is-masonry > .full-width {
   -moz-column-span: all;
        column-span: all;
   -webkit-column-span: all;
@@ -493,51 +493,51 @@ template {
        break-inside: avoid;
   margin-bottom: 1.5rem;
 }
-.row.is-masonry.col-1 {
+.row.is-masonry.col-1, .is-masonry.col-1 {
   -moz-column-count: 1;
        column-count: 1;
 }
-.row.is-masonry.col-2 {
+.row.is-masonry.col-2, .is-masonry.col-2 {
   -moz-column-count: 2;
        column-count: 2;
 }
-.row.is-masonry.col-3 {
+.row.is-masonry.col-3, .is-masonry.col-3 {
   -moz-column-count: 3;
        column-count: 3;
 }
-.row.is-masonry.col-4 {
+.row.is-masonry.col-4, .is-masonry.col-4 {
   -moz-column-count: 4;
        column-count: 4;
 }
-.row.is-masonry.col-5 {
+.row.is-masonry.col-5, .is-masonry.col-5 {
   -moz-column-count: 5;
        column-count: 5;
 }
-.row.is-masonry.col-6 {
+.row.is-masonry.col-6, .is-masonry.col-6 {
   -moz-column-count: 6;
        column-count: 6;
 }
-.row.is-masonry.col-7 {
+.row.is-masonry.col-7, .is-masonry.col-7 {
   -moz-column-count: 7;
        column-count: 7;
 }
-.row.is-masonry.col-8 {
+.row.is-masonry.col-8, .is-masonry.col-8 {
   -moz-column-count: 8;
        column-count: 8;
 }
-.row.is-masonry.col-9 {
+.row.is-masonry.col-9, .is-masonry.col-9 {
   -moz-column-count: 9;
        column-count: 9;
 }
-.row.is-masonry.col-10 {
+.row.is-masonry.col-10, .is-masonry.col-10 {
   -moz-column-count: 10;
        column-count: 10;
 }
-.row.is-masonry.col-11 {
+.row.is-masonry.col-11, .is-masonry.col-11 {
   -moz-column-count: 11;
        column-count: 11;
 }
-.row.is-masonry.col-12 {
+.row.is-masonry.col-12, .is-masonry.col-12 {
   -moz-column-count: 12;
        column-count: 12;
 }
@@ -545,55 +545,55 @@ template {
 /* Tablet overrides: if .col-#-tablet is present, use that;
    otherwise default to 2 columns */
 @media only screen and (min-width: 769px) and (max-width: 1024px) {
-  .row.is-masonry.col-1-tablet {
+  .row.is-masonry.col-1-tablet, .is-masonry.col-1-tablet {
     -moz-column-count: 1 !important;
          column-count: 1 !important;
   }
-  .row.is-masonry.col-2-tablet {
+  .row.is-masonry.col-2-tablet, .is-masonry.col-2-tablet {
     -moz-column-count: 2 !important;
          column-count: 2 !important;
   }
-  .row.is-masonry.col-3-tablet {
+  .row.is-masonry.col-3-tablet, .is-masonry.col-3-tablet {
     -moz-column-count: 3 !important;
          column-count: 3 !important;
   }
-  .row.is-masonry.col-4-tablet {
+  .row.is-masonry.col-4-tablet, .is-masonry.col-4-tablet {
     -moz-column-count: 4 !important;
          column-count: 4 !important;
   }
-  .row.is-masonry.col-5-tablet {
+  .row.is-masonry.col-5-tablet, .is-masonry.col-5-tablet {
     -moz-column-count: 5 !important;
          column-count: 5 !important;
   }
-  .row.is-masonry.col-6-tablet {
+  .row.is-masonry.col-6-tablet, .is-masonry.col-6-tablet {
     -moz-column-count: 6 !important;
          column-count: 6 !important;
   }
-  .row.is-masonry.col-7-tablet {
+  .row.is-masonry.col-7-tablet, .is-masonry.col-7-tablet {
     -moz-column-count: 7 !important;
          column-count: 7 !important;
   }
-  .row.is-masonry.col-8-tablet {
+  .row.is-masonry.col-8-tablet, .is-masonry.col-8-tablet {
     -moz-column-count: 8 !important;
          column-count: 8 !important;
   }
-  .row.is-masonry.col-9-tablet {
+  .row.is-masonry.col-9-tablet, .is-masonry.col-9-tablet {
     -moz-column-count: 9 !important;
          column-count: 9 !important;
   }
-  .row.is-masonry.col-10-tablet {
+  .row.is-masonry.col-10-tablet, .is-masonry.col-10-tablet {
     -moz-column-count: 10 !important;
          column-count: 10 !important;
   }
-  .row.is-masonry.col-11-tablet {
+  .row.is-masonry.col-11-tablet, .is-masonry.col-11-tablet {
     -moz-column-count: 11 !important;
          column-count: 11 !important;
   }
-  .row.is-masonry.col-12-tablet {
+  .row.is-masonry.col-12-tablet, .is-masonry.col-12-tablet {
     -moz-column-count: 12 !important;
          column-count: 12 !important;
   }
-  .row.is-masonry:not([class*=-tablet]) {
+  .row.is-masonry:not([class*=-tablet]), .is-masonry:not([class*=-tablet]) {
     -moz-column-count: 2;
          column-count: 2;
   }
@@ -601,57 +601,118 @@ template {
 /* Phone overrides: if .col-#-phone is present, use that;
    otherwise default to 1 column */
 @media only screen and (max-width: 768px) {
-  .row.is-masonry.col-1-phone {
+  .row.is-masonry.col-1-phone, .is-masonry.col-1-phone {
     -moz-column-count: 1 !important;
          column-count: 1 !important;
   }
-  .row.is-masonry.col-2-phone {
+  .row.is-masonry.col-2-phone, .is-masonry.col-2-phone {
     -moz-column-count: 2 !important;
          column-count: 2 !important;
   }
-  .row.is-masonry.col-3-phone {
+  .row.is-masonry.col-3-phone, .is-masonry.col-3-phone {
     -moz-column-count: 3 !important;
          column-count: 3 !important;
   }
-  .row.is-masonry.col-4-phone {
+  .row.is-masonry.col-4-phone, .is-masonry.col-4-phone {
     -moz-column-count: 4 !important;
          column-count: 4 !important;
   }
-  .row.is-masonry.col-5-phone {
+  .row.is-masonry.col-5-phone, .is-masonry.col-5-phone {
     -moz-column-count: 5 !important;
          column-count: 5 !important;
   }
-  .row.is-masonry.col-6-phone {
+  .row.is-masonry.col-6-phone, .is-masonry.col-6-phone {
     -moz-column-count: 6 !important;
          column-count: 6 !important;
   }
-  .row.is-masonry.col-7-phone {
+  .row.is-masonry.col-7-phone, .is-masonry.col-7-phone {
     -moz-column-count: 7 !important;
          column-count: 7 !important;
   }
-  .row.is-masonry.col-8-phone {
+  .row.is-masonry.col-8-phone, .is-masonry.col-8-phone {
     -moz-column-count: 8 !important;
          column-count: 8 !important;
   }
-  .row.is-masonry.col-9-phone {
+  .row.is-masonry.col-9-phone, .is-masonry.col-9-phone {
     -moz-column-count: 9 !important;
          column-count: 9 !important;
   }
-  .row.is-masonry.col-10-phone {
+  .row.is-masonry.col-10-phone, .is-masonry.col-10-phone {
     -moz-column-count: 10 !important;
          column-count: 10 !important;
   }
-  .row.is-masonry.col-11-phone {
+  .row.is-masonry.col-11-phone, .is-masonry.col-11-phone {
     -moz-column-count: 11 !important;
          column-count: 11 !important;
   }
-  .row.is-masonry.col-12-phone {
+  .row.is-masonry.col-12-phone, .is-masonry.col-12-phone {
     -moz-column-count: 12 !important;
          column-count: 12 !important;
   }
-  .row.is-masonry:not([class*=-phone]) {
+  .row.is-masonry:not([class*=-phone]), .is-masonry:not([class*=-phone]) {
     -moz-column-count: 1 !important;
          column-count: 1 !important;
+  }
+}
+/* Hide Utilities */
+@media only screen and (max-width: 768px) {
+  .hide-phone {
+    display: none !important;
+  }
+}
+
+@media only screen and (min-width: 769px) and (max-width: 1024px) {
+  .hide-tablet {
+    display: none !important;
+  }
+}
+
+@media only screen and (min-width: 1025px) and (max-width: 1440px) {
+  .hide-laptop {
+    display: none !important;
+  }
+}
+
+@media only screen and (min-width: 1441px) {
+  .hide-desktop {
+    display: none !important;
+  }
+}
+
+/* Show Utilities (hidden by default, then shown only on specified devices) */
+.show-phone {
+  display: none;
+}
+@media only screen and (max-width: 768px) {
+  .show-phone {
+    display: block !important;
+  }
+}
+
+.show-tablet {
+  display: none;
+}
+@media only screen and (min-width: 769px) and (max-width: 1024px) {
+  .show-tablet {
+    display: block !important;
+  }
+}
+
+.show-laptop {
+  display: none;
+}
+@media only screen and (min-width: 1025px) and (max-width: 1440px) {
+  .show-laptop {
+    display: block !important;
+  }
+}
+
+.show-desktop {
+  display: none;
+}
+@media only screen and (min-width: 1441px) {
+  .show-desktop {
+    display: block !important;
   }
 }
 @keyframes spin {

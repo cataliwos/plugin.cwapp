@@ -2,6 +2,13 @@
 // Grid System (Backward Compatible with Masonry Upgrade)
 // Supports: Phone, Tablet, Laptop, Desktop
 // ===========================
+// Define breakpoints (adjust these if needed)
+$phone-max: 768px;
+$tablet-min: 769px;
+$tablet-max: 1024px;
+$laptop-min: 1025px;
+$laptop-max: 1440px;
+$desktop-min: 1441px;
 
 /* Box-sizing reset */
 *, *::before, *::after {
@@ -33,8 +40,8 @@
 
 /* Responsive grid definitions */
 
-/* Phone: max-width 768px */
-@media only screen and (max-width: 768px) {
+/* Phone: max-width $phone-max */
+@media only screen and (max-width: $phone-max) {
   .grid-1-phone { width: 8.333%; }
   .grid-2-phone { width: 16.667%; }
   .grid-3-phone { width: 25%; }
@@ -49,8 +56,8 @@
   .grid-12-phone { width: 100%; }
 }
 
-/* Tablet: min-width 769px and max-width 1024px */
-@media only screen and (min-width: 769px) and (max-width: 1024px) {
+/* Tablet: min-width $tablet-min and max-width $tablet-max */
+@media only screen and (min-width: $tablet-min) and (max-width: $tablet-max) {
   .grid-1-tablet { width: 8.333%; }
   .grid-2-tablet { width: 16.667%; }
   .grid-3-tablet { width: 25%; }
@@ -65,8 +72,8 @@
   .grid-12-tablet { width: 100%; }
 }
 
-/* Laptop: min-width 1025px and max-width 1440px */
-@media only screen and (min-width: 1025px) and (max-width: 1440px) {
+/* Laptop: min-width $laptop-min and max-width $laptop-max */
+@media only screen and (min-width: $laptop-min) and (max-width: $laptop-max) {
   .grid-1-laptop { width: 8.333%; }
   .grid-2-laptop { width: 16.667%; }
   .grid-3-laptop { width: 25%; }
@@ -81,8 +88,8 @@
   .grid-12-laptop { width: 100%; }
 }
 
-/* Desktop: min-width 1441px */
-@media only screen and (min-width: 1441px) {
+/* Desktop: min-width $desktop-min */
+@media only screen and (min-width: $desktop-min) {
   .grid-1-desktop { width: 8.333%; }
   .grid-2-desktop { width: 16.667%; }
   .grid-3-desktop { width: 25%; }
@@ -105,7 +112,7 @@
   Desktop column count is set with helper classes (.col-#),
   with optional overrides for tablet (.col-#-tablet) and phone (.col-#-phone).
 */
-.row.is-masonry {
+.row.is-masonry, .is-masonry {
   display: block;
   column-gap: 1.5rem;
   
@@ -139,8 +146,8 @@
 
 /* Tablet overrides: if .col-#-tablet is present, use that;
    otherwise default to 2 columns */
-@media only screen and (min-width: 769px) and (max-width: 1024px) {
-  .row.is-masonry {
+@media only screen and (min-width: $tablet-min) and (max-width: $tablet-max) {
+  .row.is-masonry, .is-masonry {
     @for $i from 1 through 12 {
       &.col-#{$i}-tablet {
         column-count: $i !important;
@@ -154,8 +161,8 @@
 
 /* Phone overrides: if .col-#-phone is present, use that;
    otherwise default to 1 column */
-@media only screen and (max-width: 768px) {
-  .row.is-masonry {
+@media only screen and (max-width: $phone-max) {
+  .row.is-masonry, .is-masonry {
     @for $i from 1 through 12 {
       &.col-#{$i}-phone {
         column-count: $i !important;
@@ -166,3 +173,52 @@
     }
   }
 }
+
+/* Hide Utilities */
+.hide-phone {
+  @media only screen and (max-width: $phone-max) {
+    display: none !important;
+  }
+}
+.hide-tablet {
+  @media only screen and (min-width: $tablet-min) and (max-width: $tablet-max) {
+    display: none !important;
+  }
+}
+.hide-laptop {
+  @media only screen and (min-width: $laptop-min) and (max-width: $laptop-max) {
+    display: none !important;
+  }
+}
+.hide-desktop {
+  @media only screen and (min-width: $desktop-min) {
+    display: none !important;
+  }
+}
+
+/* Show Utilities (hidden by default, then shown only on specified devices) */
+.show-phone {
+  display: none;
+  @media only screen and (max-width: $phone-max) {
+    display: block !important;
+  }
+}
+.show-tablet {
+  display: none;
+  @media only screen and (min-width: $tablet-min) and (max-width: $tablet-max) {
+    display: block !important;
+  }
+}
+.show-laptop {
+  display: none;
+  @media only screen and (min-width: $laptop-min) and (max-width: $laptop-max) {
+    display: block !important;
+  }
+}
+.show-desktop {
+  display: none;
+  @media only screen and (min-width: $desktop-min) {
+    display: block !important;
+  }
+}
+
